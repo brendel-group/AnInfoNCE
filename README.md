@@ -1,1 +1,3 @@
-# AnInfoNCE
+---
+permalink: /index.html
+---

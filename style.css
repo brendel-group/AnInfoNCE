@@ -1,0 +1,71 @@
+.main {
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+}
+
+.code {
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+h3 {
+    margin-top: 1.0rem; 
+}
+
+.row-dense {
+    padding-bottom: 0;
+}
+
+.a {
+    color: gainsboro;
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+}
+
+td {
+    padding: 0 15px;
+}
+
+p {
+    text-align: justify;
+
+}
+
+.collapse-container {
+    text-align: center;
+    position: relative;
+
+}
+
+.collapse-container #moreless.collapsed:after {
+    content: '+ Show More';
+}
+
+.collapse-container #moreless:not(.collapsed):after {
+    content: '- Show Less';
+}
+
+.collapse-container .collapse.collapse:not(.show) {
+    display: block;
+    /* height = lineheight * no of lines to display */
+    height: 7.7em;
+    overflow: hidden;
+}
+
+.collapse-container .collapse.collapse:not(.show):before {
+    content: '';
+    width: 100%;
+    height: 7.7em;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: linear-gradient(rgba(255, 255, 255, 0), 60px, white);
+}
+
+.collapse-container .collapse.collapsing {
+    height: 7.7em;
+}
+
+.image-container {
+    text-align: center;
+}
+.image-container > div {
+    display: inline-block;
+}

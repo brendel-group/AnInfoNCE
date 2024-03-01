@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Primary Meta Tags -->
+    <title>Contrastive Learning: Reducing the Gap Between Theory and Practice</title>
+    <meta name="title" content="Contrastive Learning: Reducing the Gap Between Theory and Practice">
+    <meta name="description"
+        content="Previous theoretical work on contrastive learning (CL) with InfoNCE showed that, under certain assumptions, the learned representations uncover the ground-truth latent factors. We argue that these theories overlook crucial aspects of how CL is deployed in practice. Specifically, they assume that within a positive pair, all latent factors either vary to a similar extent, or that some do not vary at all. However, in practice, positive pairs are often generated using augmentations such as strong cropping to just a few pixels. Hence, a more realistic assumption is that all latent factors change, but there exists a continuum of variability across these factors. We introduce AnInfoNCE, a generalization of InfoNCE that can provably uncover the latent factors in this anisotropic setting, thereby broadly generalizing previous identifiability results in CL. We validate our identifiability results in controlled experiments and show that AnInfoNCE increases the recovery of previously collapsed information in CIFAR and ImageNet. Additionally, we explore and discuss further mismatches between theoretical assumptions and practical implementations, including extensions to hard negative mining and loss ensembles.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://brendel-group.github.io/mis/">
+    <meta property="og:title" content="Contrastive Learning: Reducing the Gap Between Theory and Practice">
+    <meta property="og:description"
+        content="Previous theoretical work on contrastive learning (CL) with InfoNCE showed that, under certain assumptions, the learned representations uncover the ground-truth latent factors. We argue that these theories overlook crucial aspects of how CL is deployed in practice. Specifically, they assume that within a positive pair, all latent factors either vary to a similar extent, or that some do not vary at all. However, in practice, positive pairs are often generated using augmentations such as strong cropping to just a few pixels. Hence, a more realistic assumption is that all latent factors change, but there exists a continuum of variability across these factors. We introduce AnInfoNCE, a generalization of InfoNCE that can provably uncover the latent factors in this anisotropic setting, thereby broadly generalizing previous identifiability results in CL. We validate our identifiability results in controlled experiments and show that AnInfoNCE increases the recovery of previously collapsed information in CIFAR and ImageNet. Additionally, we explore and discuss further mismatches between theoretical assumptions and practical implementations, including extensions to hard negative mining and loss ensembles.">
+    <meta property="og:image" content="https://brendel-group.github.io/mis/mis/intro.svg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://brendel-group.github.io/mis">
+    <meta property="twitter:title" content="Contrastive Learning: Reducing the Gap Between Theory and Practice">
+    <meta property="twitter:description"
+        content="Previous theoretical work on contrastive learning (CL) with InfoNCE showed that, under certain assumptions, the learned representations uncover the ground-truth latent factors. We argue that these theories overlook crucial aspects of how CL is deployed in practice. Specifically, they assume that within a positive pair, all latent factors either vary to a similar extent, or that some do not vary at all. However, in practice, positive pairs are often generated using augmentations such as strong cropping to just a few pixels. Hence, a more realistic assumption is that all latent factors change, but there exists a continuum of variability across these factors. We introduce AnInfoNCE, a generalization of InfoNCE that can provably uncover the latent factors in this anisotropic setting, thereby broadly generalizing previous identifiability results in CL. We validate our identifiability results in controlled experiments and show that AnInfoNCE increases the recovery of previously collapsed information in CIFAR and ImageNet. Additionally, we explore and discuss further mismatches between theoretical assumptions and practical implementations, including extensions to hard negative mining and loss ensembles.">
+    <meta property="twitter:image" content="https://brendel-group.github.io/mis/mis/intro.svg">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Contrastive Learning: Reducing the Gap Between Theory and Practice</title>
+</head>
+
+<body>
+    <div class="container main">
+        <div class="row">
+            <div class="col-sm-2">
+            </div>
+            <div class="col-sm-8" id="main-content">
+                <div class="row text-center my-5" id="#">
+                    <h1>Contrastive Learning: Reducing the Gap Between Theory and Practice</h1>
+                </div>
+
+                <!-- Begin author list-->
+                <div class="row text-center mb-4">
+                    
+                    <div class="col-sm-4 mb-4">
+                        Evgenia Rusak*
+                        <a href="mailto:evgenia.rusak@uni-tuebingen.de"><i class="far"></i></a><br>
+                        University of Tübingen <br>
+                        MPI-IS
+                    </div>
+                    <div class="col-sm-4 mb-4">
+                        Patrik Reizinger* <br>
+                        MPI-IS
+                    </div>
+                    <div class="col-sm-4 mb-4">
+                        Attila Juhos*
+                        <a href="mailto:tklein@uni-tuebingen.de"><i class="far"></i></a><br>
+                        MPI-IS
+                    </div>
+                    <div class="col-sm-4 mb-4">
+                        Oliver Bringmann <br>
+                        University of Tübingen <br>
+                    </div>
+                    <div class="col-sm-4 mb-4">
+                        Roland S. Zimmermann°
+                        <a href="mailto:research@rzimmermann.com"><i class="far fa-envelope"></i></a>
+                        <a href="https://rzimmermann.com" target="_blank"><i class="fas fa-link"></i></a></br>
+                        MPI-IS
+                    </div>
+                    <div class="col-sm-4 mb-4">
+                        Wieland Brendel°
+                        <a href="mailto:wieland.brendel@tue.mpg.de"><i class="far"></i></a><br>
+                        MPI-IS
+                    </div>
+                </div>
+                <!-- End author list-->
+
+                <div class="row text-center">
+                    <div class="col-sm-6 mb-6">
+                        <h4>
+                            <a href="" target="_blank">
+                                <i class="fas fa-file-alt"></i>
+                                Paper [Soon]
+                            </a>
+                        </h4>
+                    </div>
+                    <div class="col-sm-6 mb-6">
+                        <h4>
+                            <a href="https://github.com/brendel-group/AnInfoNCE" target="_blank" style="pointer-events: none;">
+                                <i class="fab fa-github"></i>
+                                Code [Soon]
+                            </a>
+                        </h4>
+                    </div>
+                </div>
+
+                <div class="row text-center">
+                    <p>
+                        <b>tl;dr:</b>
+                        <span class="text-muted">
+                            We generalize previous identifiability results for contrastive learning toward anisotropic latents that better capture the effect of augmentations used in practical applications, thereby reducing the gap between theory and practice.
+                        </span>
+                    </p>
+                </div>
+
+                <div class="row mt-2">
+                    <h3>News</h3>
+                </div>
+
+                <div class="row">
+                    <table>
+                        <tr>
+                            <td>
+                                <span class="badge badge-pill badge-primary">Feb '24</span>
+                            </td>
+                            <td>
+                                The pre-print is now <a href="" target="_blank">available</a>.
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="row mt-2">
+                    <h3>Abstract</h3>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-12 collapse-container">
+                        <p class="collapse" id="abstractText" aria-expanded="false">
+                            Previous theoretical work on contrastive learning (CL) with InfoNCE showed that, under certain assumptions, the learned representations uncover the ground-truth latent factors. We argue that these theories overlook crucial aspects of how CL is deployed in practice. Specifically, they assume that within a positive pair, all latent factors either vary to a similar extent, or that some do not vary at all. However, in practice, positive pairs are often generated using augmentations such as strong cropping to just a few pixels. Hence, a more realistic assumption is that all latent factors change, but there exists a continuum of variability across these factors. We introduce AnInfoNCE, a generalization of InfoNCE that can provably uncover the latent factors in this anisotropic setting, thereby broadly generalizing previous identifiability results in CL. We validate our identifiability results in controlled experiments and show that AnInfoNCE increases the recovery of previously collapsed information in CIFAR and ImageNet. Additionally, we explore and discuss further mismatches between theoretical assumptions and practical implementations, including extensions to hard negative mining and loss ensembles.
+                        </p>
+                       <a role="button" id="moreless" class="collapsed" data-toggle="collapse" href="#abstractText" aria-expanded="false" aria-controls="abstractText"></a>
+                    </div>
+                </div>
+
+                <div class="row mt-2">
+                    <div class="col-12">
+                        <div style="text-align: center;">
+                            <img src="img/intro.svg" style="max-width: 700px;" />
+                        </div>
+                        <small class="text-muted">
+                            <p>
+                                <b>Illustration of the mismatch between the standard CL model and practice.</b> <b>A</b>: CL with the commonly used InfoNCE objective is <a href="https://brendel-group.github.io/cl-ica/" data-toggle="tooltip" title data-original-title="Zimmermann et al. 2021. Contrastive Learning Inverts the Data Generating Process.">identifiable</a> when all latents change to the same extent across the positive pair, which is unlikely to happen in practice. <b>B</b>: The more likely scenario when augmentations affect different latents to a different extent leads to dimensional collapse and information loss. <b>C</b>: Our proposed objective, AnInfoNCE, accommodates that features can vary to a different degree in the positive pair, avoiding collapse.
+                            </p>
+                        </small>
+                    </div>
+                </div>
+
+                <div class="row mt-2">
+                    <h3>Motivation</h3>
+                </div>
+                <div class="row mt-2 row-dense">
+                    <div class="col-12">
+                        <p>
+                            In Contrastive Learning, a model gets two views of a training sample as input and is required to learn an embedding where views of the same sample are close together, and views of different samples are far apart. The views are generated using augmentations such as random cropping and color jittering. They can be considered transformations in the implicit latent space such that different augmentations change different latent dimensions to a different extent. The connection to identifiability theory has been made by <a href="https://brendel-group.github.io/cl-ica/" data-toggle="tooltip" title data-original-title="Zimmermann et al. 2021. Contrastive Learning Inverts the Data Generating Process.">Zimmermann et al. 2021</a>, who showed that CL can provably recover the ground truth latents if the conditional distribution is isotropic, which means that the latent dimensions are varied to the same extent by the augmentations. However, this assumption is not realistic in practice because some latents, such as color, are varied strongly. In contrast, other latents, such as the shape or class of an object, are affected minimally. <a href="https://arxiv.org/abs/2106.04619" data-toggle="tooltip" title data-original-title="Zimmermann et al. 2021. Self-Supervised Learning with Data Augmentations Provably Isolates Content from Style.">Kügelgen et al.</a> relaxed the isotropic assumption on the positive conditional distributions to two partitions: content (δ-distribution) and style (non-degenerate distribution). They showed that strongly varying latents (style) are lost while non-varying latents (content) are learned. In this paper, we first allow the positive conditional distribution of different latents to change on a spectrum and then introduce a new variation of InfoNCE, called <b>AnInfoNCE</b>, which holds for anisotropically changing latents, for which we prove identifiability.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row mt-2">
+                    <h3>Main Takeaways</h3>
+                </div>
+                <div class="row mt-2 row-dense">
+                    <div class="col-12">
+                        <ul>
+                            <li>We introduce AnInfoNCE, a generalized contrastive loss assuming anisotropic positive pair distributions, and present an identifiability proof.</li>
+                            <li>Experimentally, we verify our loss in synthetic and well-controlled image experiments, having full knowledge of the ground-truth generative process.</li>
+                            <li>We further demonstrate the efficacy of AnInfoNCE on CIFAR and ImageNet in recovering the latent factors but observe a trade-off with linear readout accuracy.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row mt-2">
+                    <h3>Theory</h3>
+                </div>
+                <div class="row mt-2 row-dense">
+                    <div class="col-12">
+                        <p>
+                            We designed a new loss function, coined <b>AnInfoNCE</b>, which, contrary to InfoNCE, can model augmentations that induce anisotropic variances on the latent factors:
+                            $$
+                            \mathcal{L}_{\text{AINCE}}({\boldsymbol f},{\bf\hat{\Lambda}}) = \underset{\substack{{\boldsymbol x}, {\boldsymbol x}^{\!+}\\ \{{\boldsymbol x}^{\!-}_i\}}}{\mathbb{E}} \left[ -\ln \frac{e^{-\left\Vert {\boldsymbol f}({\boldsymbol x}^{\!+}) - {\boldsymbol f}({\boldsymbol x})\right\Vert^2_{\bf\hat{\Lambda}}}}{e^{-\left\Vert {\boldsymbol f}({\boldsymbol x}^{\hspace{-0.05em}+}) - {\boldsymbol f}({\boldsymbol x})\right\Vert^2_{\bf\hat{\Lambda}}} + \sum_{i=1}^M e^{-\left\Vert {\boldsymbol f}({\boldsymbol x}^{\!-}_i) - {\boldsymbol f}({\boldsymbol x})\right\Vert^2_{\bf\hat{\Lambda}}}} \right]
+                            $$
+                            where the new similarity function:
+                            $$
+                            -\lVert {\boldsymbol f}({\boldsymbol x}^{\!+}) - {\boldsymbol f}({\boldsymbol x}) \rVert^2_{\bf\hat{\Lambda}} = - \Big( {\boldsymbol f}({\boldsymbol x}^{\!+}) - {\boldsymbol f}({\boldsymbol x}) \Big)^{\!\!\top}{\bf\hat{\Lambda}}\Big( {\boldsymbol f}({\boldsymbol x}^{\!+}) - {\boldsymbol f}({\boldsymbol x}) \Big) 
+                            $$
+                            is now equipped with a trainable diagonal scaling matrix, \(\hat{\Lambda}\), the concentration parameter.
+                        </p>
+
+                        <p>
+                            To understand the theoretical justification of this method, assume a Data Generating Process, where the observed data \({\boldsymbol x}, {\boldsymbol x}^{\!+},\{{\boldsymbol x}^{\!-}_i\}\) are generated by passing the normalized latent vectors \({\boldsymbol z}, {\boldsymbol z}^{\!+},\{{\boldsymbol z}^{\!-}_i\}\) through an invertible generator \(\boldsymbol{g}\). The anchor and negative pairs \({\boldsymbol z}, \{{\boldsymbol z}^{\!-}_i\}\) are uniformly sampled from the hypersphere, whereas \({\boldsymbol z}^{\!+}\) follows an anisotropic conditional distribution:
+                            $$
+                            p({\boldsymbol z}) = \mathrm{const},\quad p({\boldsymbol z}^{\!+}|{\boldsymbol z}) \propto e^{-({\boldsymbol z}^{\!+}-{\boldsymbol z})^\top {\bf{\Lambda}}({\boldsymbol z}^{\!+} -{\boldsymbol z})}
+                            $$
+                            The diagonal scaling matrix \(\bf\Lambda\) describes the anisotropic effect of augmentations on the latent features.
+
+                            Our main theoretical result shows that if a pair \(({\boldsymbol f},{\bf\hat{\Lambda}})\) minimizes \(\mathcal{L}_{\text{AnInfoNCE}}\), then the latent factors \(z\) are identified up to orthogonal transformations, i.e., we can recover the ground-truth latents up to simple transformations.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row mt-2">
+                    <h3>A Model Trained with AnInfoNCE Can Learn Content and Style Latents</h3>
+                </div>
+                <div class="row mt-2 row-dense">
+                    <div class="col-12">
+                        <p>
+                            Following <a href="https://brendel-group.github.io/cl-ica/" data-toggle="tooltip" title data-original-title="Zimmermann et al. 2021. Contrastive Learning Inverts the Data Generating Process.">previously introduced</a> experimental settings we consider a fully-controlled Data Generating Process. Since we have control of the ground-truth latents, we can directly model a setting where augmentations affect different latents to a different extent. We achieve this by introducing an anisotropy in the positive conditional by varying the ground-truth concentration parameter. We set the value of half of the latent dimensions to a low concentration parameter and the other half to a high concentration parameter. A higher concentration parameter corresponds to a more narrow positive conditional distribution and more content-like behavior while dimensions with a lower concentration parameter correspond to style-like latents. Training a model on the generated data with AnInfoNCE, we observe that both content and style latents can be identified. In contrast, style information is lost when training with the regular InfoNCE loss.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="image-container">
+                        <img src="img/toy_results.svg" style="max-width: 225px;" />
+                    </div>
+                    <small class="text-muted">
+                        <p>
+                            Training a model with AnInfoNCE recovers the ground truth content and style latents while style information is lost when training with regular InfoNCE.
+                        </p>
+                    </small>
+                </div>
+
+
+                <div class="row mt-2">
+                    <h3>Training with AnInfoNCE Improves Augmentations Readout - But There is a trade-off with classification accuracy</h3>
+                </div>
+                <div class="row mt-2 row-dense">
+                    <div class="col-12">
+                        <p>
+                            We do not have access to the true Data-Generating Process in real-world datasets - thus, we have to use a proxy task. Sampling from the true conditional distribution is modeled as using augmentations to generate different views as inputs for the model; therefore, we can assess how well we recover ground truth latents by measuring the degree to which the model keeps the information about the used augmentations. Therefore, we calculate the linear readout accuracy on the augmentations used during training to judge how well we recover the latent factors.
+                        </p>
+
+                        <p>
+                            Our experiments on CIFAR10 and ImageNet show that our loss with a trainable concentration parameter leads to much higher readout accuracy on the used augmentations, i.e., we successfully recover more latent dimensions compared to the regular InfoNCE loss. While we reduce the information loss, this surprisingly does not lead to better downstream accuracy. 
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="image-container">
+                        $$
+                        \begin{array} {ccc}\hline \text{Training Objective} & \text{Classes} & \text{Augmentations} \\
+                        \hline
+                        \textbf{CIFAR10} \\
+                        \text{InfoNCE} & \textbf{90.9} & 57.7 \\ 
+                        \text{AnInfoNCE} &  88.4  & \textbf{80.5} \\ 
+                        \hline
+                        \textbf{ImageNet} \\
+                        \text{InfoNCE} & \textbf{68.2} & 74.4 \\
+                        \text{AnInfoNCE} & 59.0 & \textbf{79.3} \\ \hline  \end{array}
+                        $$
+                    </div>
+                    <small class="text-muted">
+                        <p>
+                            Training with AnInfoNCE successfully recovers more latent dimensions than regular InfoNCE, but we observe a trade-off with downstream linear accuracy.
+                        </p>
+                    </small>
+                </div>
+                <div class="row mt-2 row-dense">
+                    <div class="col-12">
+                        <p>
+                            Where does the trade-off between better recovery of latent factors and worse downstream accuracy on real-world data come from? Read our paper where we extensively analyze remaining mismatches between Contrastive Learning theory and practice and explore practical mitigation strategies!
+                        </p>
+                    </div>
+                </div>
+
+                
+                
+
+                <div class="row">
+                    <h3>Acknowledgements & Funding</h3>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-12 collapse-container">
+                        <p class="collapse" id="acknowledgmentsText" aria-expanded="false">
+                            We thank Julian Bitterwolf, Jack Brady, Steffen Schneider, Thaddäus Wiedemer, and Zac Cranko for helpful discussions. This work was supported by the German Federal Ministry of Education and Research (BMBF): Tübingen AI Center, FKZ: 01IS18039A. The authors thank the International Max Planck Research School for Intelligent Systems (IMPRS-IS) for supporting Evgenia Rusak, Patrik Reizinger, Attila Juhos, and Roland S. Zimmermann.
+                        </p>
+                       <a role="button" id="moreless" class="collapsed" data-toggle="collapse" href="#acknowledgmentsText" aria-expanded="false" aria-controls="acknowledgmentsText"></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <h3>BibTeX</h3>
+                </div>
+                <div class="row">
+                    <p>If you find our study or our dataset helpful, please cite our paper:</p>
+                </div>
+                <div class="row justify-content-md-center">
+                    <div class="col-sm-8 rounded p-3 m-2" style="background-color:lightgray;">
+                        <small class="code">
+                            @article{rusak2024contrastive,<br>
+                            &nbsp;&nbsp;author = { <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;Rusak, Evgenia and<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;Reizinger, Patrick and<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;Juhos, Attila and<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;Bringmann, Oliver and<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;Zimmermann, Roland S. and<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;Brendel, Wieland and<br>
+                            &nbsp;&nbsp;},<br>
+                            &nbsp;&nbsp;title = {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;Contrastive Learning: Reducing the<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;Gap Between Theory and Practice<br>
+                            &nbsp;&nbsp;},<br>
+                            &nbsp;&nbsp;year = {2024},<br>
+                            }
+                        </small>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <small class="text-muted">Webpage designed using Bootstrap 4.5.</small>
+                    <a href="#" class="ml-auto"><i class="fas fa-sort-up"></i></a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+
+</body>
+
+</html>
+
+</html>
