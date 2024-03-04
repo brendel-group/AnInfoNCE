@@ -1,0 +1,1 @@
+python main_mlp.py --n 10 --batch-size 1000 --space extended_sphere --c-p 0 --p 0 --only-unsupervised

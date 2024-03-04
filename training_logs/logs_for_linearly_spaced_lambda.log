@@ -1,0 +1,879 @@
+Arguments:
+	sphere_r: 1.0
+	box_min: 0.0
+	box_max: 1.0
+	sphere_norm: False
+	box_norm: False
+	only_supervised: False
+	only_unsupervised: True
+	more_unsupervised: 3
+	save_dir: 
+	num_eval_batches: 10
+	seed: None
+	act_fct: leaky_relu
+	c_param: 0.05
+	m_param: 1.0
+	tau: 1.0
+	n_mixing_layer: 3
+	n: 10
+	space_type: extended_sphere
+	m_p: 0
+	c_p: 0
+	lr: 0.0001
+	p: 0
+	batch_size: 1000
+	n_log_steps: 250
+	n_steps: 100001
+	resume_training: False
+	gt_lambda_1: 5.0
+	gt_lambda_2: 25.0
+	linearly_spaced_lambda: True
+	lr_lambda: 0.001
+	threshold: 0.1
+lambda init:  tensor([-0.0291,  0.0257,  0.0316, -0.1204,  0.0121,  0.0440, -0.0145, -0.0618,
+        -0.1809,  0.0145])
+ground truth Lambda:  tensor([ 5.0000,  7.2222,  9.4444, 11.6667, 13.8889, 16.1111, 18.3333, 20.5556,
+        22.7778, 25.0000], device='cuda:0')
+condition number threshold: 3.350169
+layer 1/3,  condition number: 3.274570695950525
+layer 2/3,  condition number: 3.1992565865698035
+layer 3/3,  condition number: 3.2744888914476933
+Id. Lin. Disentanglement: 0.6563
+Id. Perm. Disentanglement: 0.4852
+supervised test: False
+f:  Sequential(
+  (0): Linear(in_features=10, out_features=100, bias=True)
+  (1): LeakyReLU(negative_slope=0.01)
+  (2): Linear(in_features=100, out_features=500, bias=True)
+  (3): LeakyReLU(negative_slope=0.01)
+  (4): Linear(in_features=500, out_features=500, bias=True)
+  (5): LeakyReLU(negative_slope=0.01)
+  (6): Linear(in_features=500, out_features=500, bias=True)
+  (7): LeakyReLU(negative_slope=0.01)
+  (8): Linear(in_features=500, out_features=500, bias=True)
+  (9): LeakyReLU(negative_slope=0.01)
+  (10): Linear(in_features=500, out_features=100, bias=True)
+  (11): LeakyReLU(negative_slope=0.01)
+  (12): Linear(in_features=100, out_features=10, bias=True)
+  (13): RescaleLayer()
+)
+Step: 1 	 Loss: 7.6004 	 <Loss>: 7.6004 	 Lin. Disentanglement: 0.3950 	 Perm. Disentanglement: 0.4233
+learned lambda values: [0.7, 0.7, 0.7, 0.6, 0.7, 0.7, 0.7, 0.7, 0.6, 0.7] 	
+Step: 251 	 Loss: 7.1960 	 <Loss>: 7.3191 	 Lin. Disentanglement: 0.3282 	 Perm. Disentanglement: 0.4067
+learned lambda values: [0.9, 0.9, 0.9, 0.8, 0.9, 0.9, 0.9, 0.9, 0.7, 0.9] 	
+Step: 501 	 Loss: 6.9812 	 <Loss>: 7.0829 	 Lin. Disentanglement: 0.4758 	 Perm. Disentanglement: 0.4399
+learned lambda values: [1.1, 1.3, 1.1, 1.0, 1.2, 1.0, 1.1, 1.2, 0.7, 1.1] 	
+Step: 751 	 Loss: 6.8420 	 <Loss>: 6.9074 	 Lin. Disentanglement: 0.5613 	 Perm. Disentanglement: 0.4796
+learned lambda values: [1.3, 1.7, 1.3, 1.0, 1.4, 1.1, 1.2, 1.5, 0.7, 1.4] 	
+Step: 1001 	 Loss: 6.7048 	 <Loss>: 6.7688 	 Lin. Disentanglement: 0.5774 	 Perm. Disentanglement: 0.5572
+learned lambda values: [1.4, 2.0, 1.6, 1.2, 1.6, 1.2, 1.3, 1.8, 0.8, 1.6] 	
+Step: 1251 	 Loss: 6.5813 	 <Loss>: 6.6534 	 Lin. Disentanglement: 0.6182 	 Perm. Disentanglement: 0.5487
+learned lambda values: [1.5, 2.2, 1.9, 1.3, 1.8, 1.3, 1.5, 2.1, 0.8, 1.8] 	
+Step: 1501 	 Loss: 6.4701 	 <Loss>: 6.5442 	 Lin. Disentanglement: 0.6630 	 Perm. Disentanglement: 0.5489
+learned lambda values: [1.7, 2.5, 2.2, 1.6, 2.0, 1.4, 1.8, 2.3, 0.8, 2.0] 	
+Step: 1751 	 Loss: 6.4012 	 <Loss>: 6.4293 	 Lin. Disentanglement: 0.6950 	 Perm. Disentanglement: 0.5241
+learned lambda values: [2.0, 2.7, 2.5, 1.9, 2.2, 1.4, 2.2, 2.6, 0.8, 2.2] 	
+Step: 2001 	 Loss: 6.2804 	 <Loss>: 6.3191 	 Lin. Disentanglement: 0.7167 	 Perm. Disentanglement: 0.5279
+learned lambda values: [2.3, 2.9, 2.7, 2.3, 2.5, 1.4, 2.5, 2.8, 0.8, 2.4] 	
+Step: 2251 	 Loss: 6.1541 	 <Loss>: 6.2057 	 Lin. Disentanglement: 0.7366 	 Perm. Disentanglement: 0.5669
+learned lambda values: [2.7, 3.1, 3.0, 2.6, 2.7, 1.5, 2.8, 3.0, 0.8, 2.6] 	
+Step: 2501 	 Loss: 6.0741 	 <Loss>: 6.0997 	 Lin. Disentanglement: 0.7301 	 Perm. Disentanglement: 0.5836
+learned lambda values: [3.0, 3.3, 3.2, 2.9, 2.9, 1.5, 3.1, 3.3, 0.8, 2.8] 	
+Step: 2751 	 Loss: 5.9788 	 <Loss>: 5.9925 	 Lin. Disentanglement: 0.7365 	 Perm. Disentanglement: 0.5944
+learned lambda values: [3.4, 3.6, 3.5, 3.2, 3.1, 1.5, 3.4, 3.5, 0.8, 3.0] 	
+Step: 3001 	 Loss: 5.8283 	 <Loss>: 5.8984 	 Lin. Disentanglement: 0.7409 	 Perm. Disentanglement: 0.5845
+learned lambda values: [3.6, 3.8, 3.7, 3.5, 3.3, 1.5, 3.7, 3.7, 0.8, 3.2] 	
+Step: 3251 	 Loss: 5.8014 	 <Loss>: 5.8102 	 Lin. Disentanglement: 0.7390 	 Perm. Disentanglement: 0.5657
+learned lambda values: [3.9, 4.0, 3.9, 3.8, 3.5, 1.5, 4.0, 3.9, 0.8, 3.4] 	
+Step: 3501 	 Loss: 5.6614 	 <Loss>: 5.7229 	 Lin. Disentanglement: 0.7495 	 Perm. Disentanglement: 0.5932
+learned lambda values: [4.2, 4.2, 4.1, 4.1, 3.7, 1.5, 4.2, 4.1, 0.9, 3.6] 	
+Step: 3751 	 Loss: 5.5504 	 <Loss>: 5.6415 	 Lin. Disentanglement: 0.7574 	 Perm. Disentanglement: 0.5926
+learned lambda values: [4.4, 4.4, 4.4, 4.3, 3.9, 1.5, 4.5, 4.3, 0.9, 3.8] 	
+Step: 4001 	 Loss: 5.5501 	 <Loss>: 5.5702 	 Lin. Disentanglement: 0.7582 	 Perm. Disentanglement: 0.5967
+learned lambda values: [4.7, 4.6, 4.6, 4.6, 4.1, 1.5, 4.7, 4.5, 0.9, 4.0] 	
+Step: 4251 	 Loss: 5.5065 	 <Loss>: 5.4985 	 Lin. Disentanglement: 0.7662 	 Perm. Disentanglement: 0.6103
+learned lambda values: [4.9, 4.8, 4.8, 4.8, 4.3, 1.5, 5.0, 4.7, 0.9, 4.2] 	
+Step: 4501 	 Loss: 5.4648 	 <Loss>: 5.4361 	 Lin. Disentanglement: 0.7686 	 Perm. Disentanglement: 0.6267
+learned lambda values: [5.2, 5.0, 5.0, 5.1, 4.5, 1.5, 5.2, 4.9, 0.9, 4.4] 	
+Step: 4751 	 Loss: 5.3027 	 <Loss>: 5.3671 	 Lin. Disentanglement: 0.7606 	 Perm. Disentanglement: 0.6000
+learned lambda values: [5.4, 5.2, 5.2, 5.3, 4.7, 1.5, 5.4, 5.2, 0.9, 4.6] 	
+Step: 5001 	 Loss: 5.2737 	 <Loss>: 5.3060 	 Lin. Disentanglement: 0.7761 	 Perm. Disentanglement: 0.6349
+learned lambda values: [5.6, 5.4, 5.4, 5.5, 4.9, 1.5, 5.6, 5.4, 1.0, 4.8] 	
+Step: 5251 	 Loss: 5.2464 	 <Loss>: 5.2516 	 Lin. Disentanglement: 0.7830 	 Perm. Disentanglement: 0.6360
+learned lambda values: [5.9, 5.6, 5.6, 5.7, 5.1, 1.5, 5.9, 5.6, 1.0, 4.9] 	
+Step: 5501 	 Loss: 5.1899 	 <Loss>: 5.1954 	 Lin. Disentanglement: 0.7863 	 Perm. Disentanglement: 0.6437
+learned lambda values: [6.1, 5.8, 5.9, 6.0, 5.3, 1.5, 6.1, 5.8, 1.0, 5.1] 	
+Step: 5751 	 Loss: 5.1196 	 <Loss>: 5.1476 	 Lin. Disentanglement: 0.7969 	 Perm. Disentanglement: 0.6641
+learned lambda values: [6.3, 6.1, 6.1, 6.2, 5.5, 1.5, 6.3, 6.0, 1.0, 5.3] 	
+Step: 6001 	 Loss: 5.1609 	 <Loss>: 5.1018 	 Lin. Disentanglement: 0.7924 	 Perm. Disentanglement: 0.6600
+learned lambda values: [6.5, 6.3, 6.3, 6.4, 5.7, 1.5, 6.5, 6.2, 1.0, 5.5] 	
+Step: 6251 	 Loss: 4.9983 	 <Loss>: 5.0600 	 Lin. Disentanglement: 0.8237 	 Perm. Disentanglement: 0.6702
+learned lambda values: [6.7, 6.5, 6.5, 6.6, 5.9, 1.5, 6.7, 6.4, 1.1, 5.7] 	
+Step: 6501 	 Loss: 5.0316 	 <Loss>: 5.0184 	 Lin. Disentanglement: 0.8467 	 Perm. Disentanglement: 0.7049
+learned lambda values: [6.9, 6.7, 6.7, 6.8, 6.1, 1.6, 6.9, 6.6, 1.1, 5.9] 	
+Step: 6751 	 Loss: 4.8963 	 <Loss>: 4.9845 	 Lin. Disentanglement: 0.8570 	 Perm. Disentanglement: 0.7133
+learned lambda values: [7.1, 6.9, 6.9, 7.0, 6.3, 1.7, 7.1, 6.8, 1.2, 6.1] 	
+Step: 7001 	 Loss: 4.9109 	 <Loss>: 4.9390 	 Lin. Disentanglement: 0.8644 	 Perm. Disentanglement: 0.7331
+learned lambda values: [7.3, 7.1, 7.1, 7.2, 6.5, 2.1, 7.4, 7.0, 1.2, 6.3] 	
+Step: 7251 	 Loss: 4.8282 	 <Loss>: 4.8908 	 Lin. Disentanglement: 0.8714 	 Perm. Disentanglement: 0.7265
+learned lambda values: [7.6, 7.3, 7.3, 7.4, 6.7, 2.8, 7.6, 7.2, 1.2, 6.5] 	
+Step: 7501 	 Loss: 4.8493 	 <Loss>: 4.8378 	 Lin. Disentanglement: 0.8735 	 Perm. Disentanglement: 0.7301
+learned lambda values: [7.8, 7.5, 7.5, 7.6, 6.9, 3.2, 7.8, 7.4, 1.3, 6.7] 	
+Step: 7751 	 Loss: 4.7142 	 <Loss>: 4.7988 	 Lin. Disentanglement: 0.8818 	 Perm. Disentanglement: 0.7570
+learned lambda values: [8.0, 7.7, 7.7, 7.8, 7.1, 3.6, 8.0, 7.6, 1.3, 6.9] 	
+Step: 8001 	 Loss: 4.7318 	 <Loss>: 4.7541 	 Lin. Disentanglement: 0.8828 	 Perm. Disentanglement: 0.7553
+learned lambda values: [8.2, 7.9, 7.9, 8.0, 7.3, 3.9, 8.2, 7.8, 1.4, 7.1] 	
+Step: 8251 	 Loss: 4.6978 	 <Loss>: 4.7148 	 Lin. Disentanglement: 0.8774 	 Perm. Disentanglement: 0.7413
+learned lambda values: [8.4, 8.1, 8.1, 8.2, 7.5, 4.2, 8.4, 8.0, 1.4, 7.3] 	
+Step: 8501 	 Loss: 4.6835 	 <Loss>: 4.6877 	 Lin. Disentanglement: 0.8800 	 Perm. Disentanglement: 0.7503
+learned lambda values: [8.6, 8.3, 8.3, 8.4, 7.7, 4.4, 8.6, 8.2, 1.5, 7.4] 	
+Step: 8751 	 Loss: 4.6129 	 <Loss>: 4.6513 	 Lin. Disentanglement: 0.8835 	 Perm. Disentanglement: 0.7571
+learned lambda values: [8.8, 8.5, 8.5, 8.6, 7.9, 4.7, 8.8, 8.4, 1.5, 7.6] 	
+Step: 9001 	 Loss: 4.6460 	 <Loss>: 4.6234 	 Lin. Disentanglement: 0.8823 	 Perm. Disentanglement: 0.7626
+learned lambda values: [9.0, 8.7, 8.8, 8.8, 8.1, 4.9, 9.1, 8.6, 1.6, 7.8] 	
+Step: 9251 	 Loss: 4.6238 	 <Loss>: 4.5987 	 Lin. Disentanglement: 0.8818 	 Perm. Disentanglement: 0.7436
+learned lambda values: [9.2, 8.9, 9.0, 9.0, 8.3, 5.1, 9.3, 8.8, 1.7, 8.0] 	
+Step: 9501 	 Loss: 4.5445 	 <Loss>: 4.5711 	 Lin. Disentanglement: 0.8823 	 Perm. Disentanglement: 0.7527
+learned lambda values: [9.4, 9.1, 9.2, 9.2, 8.5, 5.3, 9.5, 9.0, 1.8, 8.2] 	
+Step: 9751 	 Loss: 4.5532 	 <Loss>: 4.5511 	 Lin. Disentanglement: 0.9225 	 Perm. Disentanglement: 0.8062
+learned lambda values: [9.6, 9.3, 9.4, 9.4, 8.7, 5.5, 9.7, 9.2, 1.9, 8.4] 	
+Step: 10001 	 Loss: 4.5150 	 <Loss>: 4.5226 	 Lin. Disentanglement: 0.9714 	 Perm. Disentanglement: 0.8330
+learned lambda values: [9.8, 9.5, 9.6, 9.6, 8.9, 5.7, 9.9, 9.4, 2.8, 8.6] 	
+Step: 10251 	 Loss: 4.4870 	 <Loss>: 4.4865 	 Lin. Disentanglement: 0.9804 	 Perm. Disentanglement: 0.8452
+learned lambda values: [10.0, 9.8, 9.8, 9.8, 9.1, 5.9, 10.1, 9.7, 3.7, 8.8] 	
+Step: 10501 	 Loss: 4.4821 	 <Loss>: 4.4458 	 Lin. Disentanglement: 0.9826 	 Perm. Disentanglement: 0.8489
+learned lambda values: [10.2, 10.0, 10.0, 10.0, 9.3, 6.1, 10.3, 9.9, 4.2, 9.0] 	
+Step: 10751 	 Loss: 4.4232 	 <Loss>: 4.4131 	 Lin. Disentanglement: 0.9857 	 Perm. Disentanglement: 0.8518
+learned lambda values: [10.4, 10.2, 10.2, 10.2, 9.5, 6.3, 10.5, 10.1, 4.5, 9.2] 	
+Step: 11001 	 Loss: 4.3471 	 <Loss>: 4.3890 	 Lin. Disentanglement: 0.9847 	 Perm. Disentanglement: 0.8534
+learned lambda values: [10.6, 10.4, 10.4, 10.4, 9.7, 6.5, 10.7, 10.3, 4.8, 9.3] 	
+Step: 11251 	 Loss: 4.3427 	 <Loss>: 4.3666 	 Lin. Disentanglement: 0.9840 	 Perm. Disentanglement: 0.8490
+learned lambda values: [10.9, 10.6, 10.6, 10.6, 9.9, 6.7, 10.9, 10.5, 5.0, 9.5] 	
+Step: 11501 	 Loss: 4.3362 	 <Loss>: 4.3451 	 Lin. Disentanglement: 0.9859 	 Perm. Disentanglement: 0.8549
+learned lambda values: [11.1, 10.8, 10.8, 10.8, 10.1, 6.9, 11.1, 10.7, 5.3, 9.7] 	
+Step: 11751 	 Loss: 4.3058 	 <Loss>: 4.3273 	 Lin. Disentanglement: 0.9872 	 Perm. Disentanglement: 0.8569
+learned lambda values: [11.2, 11.0, 11.0, 11.0, 10.3, 7.1, 11.3, 10.9, 5.5, 9.9] 	
+Step: 12001 	 Loss: 4.2659 	 <Loss>: 4.3145 	 Lin. Disentanglement: 0.9873 	 Perm. Disentanglement: 0.8573
+learned lambda values: [11.4, 11.2, 11.2, 11.1, 10.5, 7.2, 11.5, 11.1, 5.7, 10.1] 	
+Step: 12251 	 Loss: 4.2797 	 <Loss>: 4.2937 	 Lin. Disentanglement: 0.9881 	 Perm. Disentanglement: 0.8601
+learned lambda values: [11.6, 11.4, 11.4, 11.3, 10.6, 7.4, 11.7, 11.3, 5.9, 10.3] 	
+Step: 12501 	 Loss: 4.2530 	 <Loss>: 4.2844 	 Lin. Disentanglement: 0.9884 	 Perm. Disentanglement: 0.8531
+learned lambda values: [11.8, 11.6, 11.6, 11.5, 10.8, 7.6, 11.9, 11.5, 6.1, 10.4] 	
+Step: 12751 	 Loss: 4.1982 	 <Loss>: 4.2601 	 Lin. Disentanglement: 0.9881 	 Perm. Disentanglement: 0.8629
+learned lambda values: [12.0, 11.8, 11.8, 11.7, 11.0, 7.7, 12.1, 11.7, 6.2, 10.6] 	
+Step: 13001 	 Loss: 4.2410 	 <Loss>: 4.2572 	 Lin. Disentanglement: 0.9884 	 Perm. Disentanglement: 0.8610
+learned lambda values: [12.2, 12.0, 12.0, 11.8, 11.2, 7.9, 12.3, 11.9, 6.4, 10.8] 	
+Step: 13251 	 Loss: 4.2698 	 <Loss>: 4.2438 	 Lin. Disentanglement: 0.9887 	 Perm. Disentanglement: 0.8618
+learned lambda values: [12.4, 12.2, 12.2, 12.0, 11.4, 8.0, 12.5, 12.1, 6.6, 10.9] 	
+Step: 13501 	 Loss: 4.2576 	 <Loss>: 4.2375 	 Lin. Disentanglement: 0.9890 	 Perm. Disentanglement: 0.8617
+learned lambda values: [12.6, 12.4, 12.4, 12.2, 11.5, 8.2, 12.7, 12.3, 6.7, 11.1] 	
+Step: 13751 	 Loss: 4.1564 	 <Loss>: 4.2167 	 Lin. Disentanglement: 0.9886 	 Perm. Disentanglement: 0.8607
+learned lambda values: [12.7, 12.6, 12.6, 12.3, 11.7, 8.3, 12.9, 12.5, 6.8, 11.2] 	
+Step: 14001 	 Loss: 4.1664 	 <Loss>: 4.2122 	 Lin. Disentanglement: 0.9901 	 Perm. Disentanglement: 0.8664
+learned lambda values: [12.9, 12.8, 12.8, 12.5, 11.9, 8.5, 13.0, 12.7, 7.0, 11.4] 	
+Step: 14251 	 Loss: 4.1452 	 <Loss>: 4.2082 	 Lin. Disentanglement: 0.9888 	 Perm. Disentanglement: 0.8590
+learned lambda values: [13.1, 13.0, 13.0, 12.7, 12.0, 8.6, 13.2, 12.9, 7.1, 11.5] 	
+Step: 14501 	 Loss: 4.1447 	 <Loss>: 4.1954 	 Lin. Disentanglement: 0.9905 	 Perm. Disentanglement: 0.8660
+learned lambda values: [13.2, 13.2, 13.1, 12.8, 12.2, 8.7, 13.4, 13.0, 7.2, 11.6] 	
+Step: 14751 	 Loss: 4.1238 	 <Loss>: 4.1896 	 Lin. Disentanglement: 0.9894 	 Perm. Disentanglement: 0.8646
+learned lambda values: [13.4, 13.4, 13.3, 12.9, 12.3, 8.8, 13.6, 13.2, 7.3, 11.7] 	
+Step: 15001 	 Loss: 4.2000 	 <Loss>: 4.1908 	 Lin. Disentanglement: 0.9897 	 Perm. Disentanglement: 0.8640
+learned lambda values: [13.6, 13.6, 13.5, 13.1, 12.5, 8.9, 13.8, 13.4, 7.4, 11.9] 	
+Step: 15251 	 Loss: 4.1737 	 <Loss>: 4.1807 	 Lin. Disentanglement: 0.9903 	 Perm. Disentanglement: 0.8694
+learned lambda values: [13.7, 13.8, 13.7, 13.2, 12.6, 9.0, 13.9, 13.6, 7.5, 12.0] 	
+Step: 15501 	 Loss: 4.0711 	 <Loss>: 4.1744 	 Lin. Disentanglement: 0.9899 	 Perm. Disentanglement: 0.8722
+learned lambda values: [13.9, 14.0, 13.9, 13.3, 12.7, 9.1, 14.1, 13.8, 7.5, 12.0] 	
+Step: 15751 	 Loss: 4.1484 	 <Loss>: 4.1691 	 Lin. Disentanglement: 0.9913 	 Perm. Disentanglement: 0.8701
+learned lambda values: [14.0, 14.1, 14.0, 13.4, 12.9, 9.1, 14.3, 14.0, 7.6, 12.1] 	
+Step: 16001 	 Loss: 4.1530 	 <Loss>: 4.1685 	 Lin. Disentanglement: 0.9908 	 Perm. Disentanglement: 0.8691
+learned lambda values: [14.1, 14.3, 14.2, 13.5, 13.0, 9.2, 14.4, 14.1, 7.6, 12.2] 	
+Step: 16251 	 Loss: 4.2360 	 <Loss>: 4.1624 	 Lin. Disentanglement: 0.9900 	 Perm. Disentanglement: 0.8722
+learned lambda values: [14.3, 14.5, 14.4, 13.6, 13.1, 9.2, 14.6, 14.3, 7.6, 12.3] 	
+Step: 16501 	 Loss: 4.1235 	 <Loss>: 4.1626 	 Lin. Disentanglement: 0.9894 	 Perm. Disentanglement: 0.8724
+learned lambda values: [14.4, 14.7, 14.5, 13.7, 13.2, 9.3, 14.7, 14.5, 7.6, 12.3] 	
+Step: 16751 	 Loss: 4.1328 	 <Loss>: 4.1564 	 Lin. Disentanglement: 0.9900 	 Perm. Disentanglement: 0.8720
+learned lambda values: [14.5, 14.9, 14.7, 13.7, 13.3, 9.3, 14.9, 14.7, 7.6, 12.3] 	
+Step: 17001 	 Loss: 4.1010 	 <Loss>: 4.1480 	 Lin. Disentanglement: 0.9910 	 Perm. Disentanglement: 0.8745
+learned lambda values: [14.7, 15.0, 14.9, 13.8, 13.4, 9.3, 15.0, 14.8, 7.5, 12.4] 	
+Step: 17251 	 Loss: 4.1638 	 <Loss>: 4.1526 	 Lin. Disentanglement: 0.9905 	 Perm. Disentanglement: 0.8787
+learned lambda values: [14.8, 15.2, 15.0, 13.8, 13.5, 9.3, 15.2, 15.0, 7.5, 12.4] 	
+Step: 17501 	 Loss: 4.1945 	 <Loss>: 4.1457 	 Lin. Disentanglement: 0.9907 	 Perm. Disentanglement: 0.8790
+learned lambda values: [14.9, 15.4, 15.2, 13.9, 13.5, 9.2, 15.3, 15.2, 7.4, 12.3] 	
+Step: 17751 	 Loss: 4.2235 	 <Loss>: 4.1447 	 Lin. Disentanglement: 0.9920 	 Perm. Disentanglement: 0.8803
+learned lambda values: [15.0, 15.6, 15.4, 13.9, 13.6, 9.2, 15.5, 15.3, 7.3, 12.3] 	
+Step: 18001 	 Loss: 4.1533 	 <Loss>: 4.1394 	 Lin. Disentanglement: 0.9906 	 Perm. Disentanglement: 0.8751
+learned lambda values: [15.1, 15.8, 15.5, 13.9, 13.7, 9.2, 15.6, 15.5, 7.3, 12.3] 	
+Step: 18251 	 Loss: 4.0880 	 <Loss>: 4.1364 	 Lin. Disentanglement: 0.9906 	 Perm. Disentanglement: 0.8792
+learned lambda values: [15.2, 15.9, 15.7, 13.9, 13.7, 9.1, 15.8, 15.7, 7.2, 12.2] 	
+Step: 18501 	 Loss: 4.1006 	 <Loss>: 4.1325 	 Lin. Disentanglement: 0.9917 	 Perm. Disentanglement: 0.8806
+learned lambda values: [15.3, 16.1, 15.9, 13.9, 13.8, 9.1, 15.9, 15.9, 7.1, 12.2] 	
+Step: 18751 	 Loss: 4.1379 	 <Loss>: 4.1384 	 Lin. Disentanglement: 0.9923 	 Perm. Disentanglement: 0.8845
+learned lambda values: [15.4, 16.3, 16.0, 13.9, 13.8, 9.0, 16.0, 16.0, 7.0, 12.2] 	
+Step: 19001 	 Loss: 4.0627 	 <Loss>: 4.1336 	 Lin. Disentanglement: 0.9909 	 Perm. Disentanglement: 0.8839
+learned lambda values: [15.4, 16.5, 16.2, 13.9, 13.8, 9.0, 16.2, 16.2, 7.0, 12.1] 	
+Step: 19251 	 Loss: 4.1314 	 <Loss>: 4.1339 	 Lin. Disentanglement: 0.9928 	 Perm. Disentanglement: 0.8851
+learned lambda values: [15.5, 16.7, 16.3, 13.8, 13.9, 8.9, 16.3, 16.4, 6.9, 12.0] 	
+Step: 19501 	 Loss: 4.1368 	 <Loss>: 4.1278 	 Lin. Disentanglement: 0.9927 	 Perm. Disentanglement: 0.8900
+learned lambda values: [15.6, 16.8, 16.5, 13.8, 13.9, 8.9, 16.4, 16.5, 6.8, 12.0] 	
+Step: 19751 	 Loss: 4.1407 	 <Loss>: 4.1219 	 Lin. Disentanglement: 0.9924 	 Perm. Disentanglement: 0.8966
+learned lambda values: [15.6, 17.0, 16.6, 13.7, 13.9, 8.8, 16.5, 16.7, 6.7, 11.9] 	
+Step: 20001 	 Loss: 4.1354 	 <Loss>: 4.1378 	 Lin. Disentanglement: 0.9919 	 Perm. Disentanglement: 0.8874
+learned lambda values: [15.7, 17.2, 16.8, 13.7, 13.9, 8.7, 16.6, 16.8, 6.7, 11.8] 	
+Step: 20251 	 Loss: 4.2263 	 <Loss>: 4.1284 	 Lin. Disentanglement: 0.9912 	 Perm. Disentanglement: 0.8966
+learned lambda values: [15.7, 17.4, 16.9, 13.6, 13.9, 8.7, 16.7, 17.0, 6.6, 11.7] 	
+Step: 20501 	 Loss: 4.1228 	 <Loss>: 4.1201 	 Lin. Disentanglement: 0.9927 	 Perm. Disentanglement: 0.8950
+learned lambda values: [15.8, 17.5, 17.1, 13.6, 13.9, 8.6, 16.9, 17.2, 6.6, 11.7] 	
+Step: 20751 	 Loss: 4.0755 	 <Loss>: 4.1199 	 Lin. Disentanglement: 0.9934 	 Perm. Disentanglement: 0.8989
+learned lambda values: [15.8, 17.7, 17.2, 13.5, 14.0, 8.6, 17.0, 17.3, 6.5, 11.6] 	
+Step: 21001 	 Loss: 4.1407 	 <Loss>: 4.1207 	 Lin. Disentanglement: 0.9927 	 Perm. Disentanglement: 0.8965
+learned lambda values: [15.8, 17.9, 17.3, 13.5, 14.0, 8.5, 17.1, 17.5, 6.4, 11.5] 	
+Step: 21251 	 Loss: 4.1493 	 <Loss>: 4.1132 	 Lin. Disentanglement: 0.9936 	 Perm. Disentanglement: 0.8989
+learned lambda values: [15.9, 18.0, 17.5, 13.4, 14.0, 8.5, 17.2, 17.6, 6.4, 11.4] 	
+Step: 21501 	 Loss: 4.1393 	 <Loss>: 4.1198 	 Lin. Disentanglement: 0.9930 	 Perm. Disentanglement: 0.8994
+learned lambda values: [15.9, 18.2, 17.6, 13.3, 14.0, 8.4, 17.3, 17.8, 6.3, 11.4] 	
+Step: 21751 	 Loss: 4.0679 	 <Loss>: 4.1190 	 Lin. Disentanglement: 0.9933 	 Perm. Disentanglement: 0.9014
+learned lambda values: [15.9, 18.4, 17.7, 13.3, 14.0, 8.4, 17.3, 17.9, 6.3, 11.3] 	
+Step: 22001 	 Loss: 4.0035 	 <Loss>: 4.1110 	 Lin. Disentanglement: 0.9938 	 Perm. Disentanglement: 0.9042
+learned lambda values: [15.9, 18.5, 17.9, 13.2, 14.0, 8.3, 17.4, 18.0, 6.3, 11.2] 	
+Step: 22251 	 Loss: 4.0739 	 <Loss>: 4.1197 	 Lin. Disentanglement: 0.9939 	 Perm. Disentanglement: 0.9042
+learned lambda values: [16.0, 18.7, 18.0, 13.1, 13.9, 8.3, 17.5, 18.2, 6.2, 11.2] 	
+Step: 22501 	 Loss: 4.1693 	 <Loss>: 4.1157 	 Lin. Disentanglement: 0.9922 	 Perm. Disentanglement: 0.9029
+learned lambda values: [16.0, 18.8, 18.1, 13.1, 13.9, 8.2, 17.6, 18.3, 6.2, 11.1] 	
+Step: 22751 	 Loss: 4.1089 	 <Loss>: 4.1108 	 Lin. Disentanglement: 0.9942 	 Perm. Disentanglement: 0.9044
+learned lambda values: [16.0, 19.0, 18.2, 13.0, 13.9, 8.2, 17.7, 18.4, 6.2, 11.0] 	
+Step: 23001 	 Loss: 4.0411 	 <Loss>: 4.1131 	 Lin. Disentanglement: 0.9950 	 Perm. Disentanglement: 0.9087
+learned lambda values: [16.0, 19.1, 18.3, 13.0, 13.9, 8.2, 17.7, 18.5, 6.2, 11.0] 	
+Step: 23251 	 Loss: 4.0070 	 <Loss>: 4.1076 	 Lin. Disentanglement: 0.9922 	 Perm. Disentanglement: 0.9078
+learned lambda values: [16.0, 19.3, 18.4, 12.9, 13.9, 8.2, 17.8, 18.7, 6.1, 10.9] 	
+Step: 23501 	 Loss: 4.0386 	 <Loss>: 4.1134 	 Lin. Disentanglement: 0.9935 	 Perm. Disentanglement: 0.9040
+learned lambda values: [16.0, 19.4, 18.5, 12.8, 13.9, 8.2, 17.9, 18.8, 6.1, 10.8] 	
+Step: 23751 	 Loss: 4.0896 	 <Loss>: 4.1111 	 Lin. Disentanglement: 0.9944 	 Perm. Disentanglement: 0.9137
+learned lambda values: [16.0, 19.6, 18.6, 12.8, 13.9, 8.1, 17.9, 18.9, 6.1, 10.8] 	
+Step: 24001 	 Loss: 4.1192 	 <Loss>: 4.1086 	 Lin. Disentanglement: 0.9933 	 Perm. Disentanglement: 0.9104
+learned lambda values: [16.0, 19.7, 18.7, 12.7, 13.9, 8.1, 18.0, 19.0, 6.1, 10.7] 	
+Step: 24251 	 Loss: 4.1227 	 <Loss>: 4.1106 	 Lin. Disentanglement: 0.9943 	 Perm. Disentanglement: 0.9144
+learned lambda values: [16.0, 19.8, 18.7, 12.7, 13.9, 8.1, 18.0, 19.1, 6.1, 10.7] 	
+Step: 24501 	 Loss: 4.0921 	 <Loss>: 4.1039 	 Lin. Disentanglement: 0.9929 	 Perm. Disentanglement: 0.9160
+learned lambda values: [16.0, 20.0, 18.8, 12.6, 13.9, 8.0, 18.1, 19.2, 6.1, 10.6] 	
+Step: 24751 	 Loss: 4.1126 	 <Loss>: 4.1018 	 Lin. Disentanglement: 0.9944 	 Perm. Disentanglement: 0.9159
+learned lambda values: [16.0, 20.1, 18.9, 12.6, 13.9, 8.0, 18.1, 19.3, 6.1, 10.5] 	
+Step: 25001 	 Loss: 4.0844 	 <Loss>: 4.1063 	 Lin. Disentanglement: 0.9932 	 Perm. Disentanglement: 0.9139
+learned lambda values: [16.0, 20.2, 19.0, 12.5, 13.8, 8.0, 18.2, 19.4, 6.0, 10.5] 	
+Step: 25251 	 Loss: 4.1468 	 <Loss>: 4.0968 	 Lin. Disentanglement: 0.9942 	 Perm. Disentanglement: 0.9189
+learned lambda values: [16.0, 20.4, 19.0, 12.5, 13.8, 8.0, 18.2, 19.5, 6.0, 10.5] 	
+Step: 25501 	 Loss: 4.0190 	 <Loss>: 4.1089 	 Lin. Disentanglement: 0.9931 	 Perm. Disentanglement: 0.9139
+learned lambda values: [16.0, 20.5, 19.1, 12.4, 13.8, 8.0, 18.2, 19.6, 6.0, 10.4] 	
+Step: 25751 	 Loss: 4.1193 	 <Loss>: 4.1030 	 Lin. Disentanglement: 0.9946 	 Perm. Disentanglement: 0.9184
+learned lambda values: [16.0, 20.6, 19.1, 12.4, 13.8, 8.0, 18.3, 19.6, 6.0, 10.3] 	
+Step: 26001 	 Loss: 4.1195 	 <Loss>: 4.1052 	 Lin. Disentanglement: 0.9948 	 Perm. Disentanglement: 0.9202
+learned lambda values: [16.0, 20.7, 19.2, 12.3, 13.8, 7.9, 18.3, 19.7, 6.0, 10.3] 	
+Step: 26251 	 Loss: 4.1062 	 <Loss>: 4.1055 	 Lin. Disentanglement: 0.9949 	 Perm. Disentanglement: 0.9216
+learned lambda values: [16.0, 20.8, 19.2, 12.3, 13.8, 7.9, 18.3, 19.8, 6.0, 10.3] 	
+Step: 26501 	 Loss: 4.1531 	 <Loss>: 4.1053 	 Lin. Disentanglement: 0.9951 	 Perm. Disentanglement: 0.9191
+learned lambda values: [16.0, 20.9, 19.3, 12.3, 13.8, 7.9, 18.3, 19.9, 6.0, 10.2] 	
+Step: 26751 	 Loss: 4.0676 	 <Loss>: 4.0988 	 Lin. Disentanglement: 0.9915 	 Perm. Disentanglement: 0.9212
+learned lambda values: [16.0, 21.0, 19.3, 12.2, 13.8, 7.9, 18.4, 19.9, 6.0, 10.2] 	
+Step: 27001 	 Loss: 4.0853 	 <Loss>: 4.1033 	 Lin. Disentanglement: 0.9957 	 Perm. Disentanglement: 0.9226
+learned lambda values: [16.0, 21.1, 19.4, 12.2, 13.8, 7.9, 18.4, 20.0, 5.9, 10.2] 	
+Step: 27251 	 Loss: 4.1545 	 <Loss>: 4.1024 	 Lin. Disentanglement: 0.9946 	 Perm. Disentanglement: 0.9229
+learned lambda values: [16.0, 21.2, 19.4, 12.2, 13.8, 7.9, 18.4, 20.1, 5.9, 10.1] 	
+Step: 27501 	 Loss: 4.0511 	 <Loss>: 4.0988 	 Lin. Disentanglement: 0.9949 	 Perm. Disentanglement: 0.9221
+learned lambda values: [16.0, 21.3, 19.5, 12.1, 13.8, 7.9, 18.4, 20.1, 5.9, 10.1] 	
+Step: 27751 	 Loss: 4.1074 	 <Loss>: 4.1022 	 Lin. Disentanglement: 0.9943 	 Perm. Disentanglement: 0.9211
+learned lambda values: [15.9, 21.4, 19.5, 12.1, 13.8, 7.9, 18.4, 20.2, 5.9, 10.1] 	
+Step: 28001 	 Loss: 4.1570 	 <Loss>: 4.1064 	 Lin. Disentanglement: 0.9952 	 Perm. Disentanglement: 0.9276
+learned lambda values: [15.9, 21.5, 19.5, 12.1, 13.8, 7.8, 18.4, 20.3, 5.9, 10.0] 	
+Step: 28251 	 Loss: 4.0494 	 <Loss>: 4.0973 	 Lin. Disentanglement: 0.9949 	 Perm. Disentanglement: 0.9253
+learned lambda values: [15.9, 21.6, 19.5, 12.0, 13.8, 7.8, 18.5, 20.3, 5.9, 10.0] 	
+Step: 28501 	 Loss: 4.1271 	 <Loss>: 4.0987 	 Lin. Disentanglement: 0.9948 	 Perm. Disentanglement: 0.9262
+learned lambda values: [15.9, 21.7, 19.6, 12.0, 13.8, 7.8, 18.5, 20.4, 5.9, 10.0] 	
+Step: 28751 	 Loss: 4.1041 	 <Loss>: 4.0945 	 Lin. Disentanglement: 0.9951 	 Perm. Disentanglement: 0.9255
+learned lambda values: [15.9, 21.8, 19.6, 12.0, 13.8, 7.8, 18.5, 20.4, 5.9, 10.0] 	
+Step: 29001 	 Loss: 4.1435 	 <Loss>: 4.0965 	 Lin. Disentanglement: 0.9949 	 Perm. Disentanglement: 0.9255
+learned lambda values: [15.9, 21.8, 19.6, 12.0, 13.8, 7.8, 18.5, 20.5, 5.9, 10.0] 	
+Step: 29251 	 Loss: 4.1391 	 <Loss>: 4.0982 	 Lin. Disentanglement: 0.9945 	 Perm. Disentanglement: 0.9280
+learned lambda values: [15.9, 21.9, 19.7, 12.0, 13.8, 7.8, 18.5, 20.5, 5.9, 9.9] 	
+Step: 29501 	 Loss: 4.1021 	 <Loss>: 4.0959 	 Lin. Disentanglement: 0.9944 	 Perm. Disentanglement: 0.9223
+learned lambda values: [15.9, 22.0, 19.7, 11.9, 13.8, 7.8, 18.5, 20.6, 5.9, 10.0] 	
+Step: 29751 	 Loss: 4.1276 	 <Loss>: 4.1033 	 Lin. Disentanglement: 0.9947 	 Perm. Disentanglement: 0.9299
+learned lambda values: [15.9, 22.1, 19.7, 11.9, 13.8, 7.8, 18.5, 20.6, 5.9, 9.9] 	
+Step: 30001 	 Loss: 4.0887 	 <Loss>: 4.1006 	 Lin. Disentanglement: 0.9949 	 Perm. Disentanglement: 0.9285
+learned lambda values: [15.9, 22.1, 19.7, 11.9, 13.8, 7.8, 18.5, 20.6, 5.9, 9.9] 	
+Step: 30251 	 Loss: 4.0823 	 <Loss>: 4.0855 	 Lin. Disentanglement: 0.9941 	 Perm. Disentanglement: 0.9271
+learned lambda values: [15.9, 22.2, 19.7, 11.9, 13.8, 7.8, 18.5, 20.7, 5.9, 9.9] 	
+Step: 30501 	 Loss: 4.1038 	 <Loss>: 4.0911 	 Lin. Disentanglement: 0.9961 	 Perm. Disentanglement: 0.9302
+learned lambda values: [15.9, 22.3, 19.8, 11.9, 13.8, 7.8, 18.5, 20.7, 5.9, 9.9] 	
+Step: 30751 	 Loss: 4.1506 	 <Loss>: 4.0971 	 Lin. Disentanglement: 0.9954 	 Perm. Disentanglement: 0.9323
+learned lambda values: [15.9, 22.3, 19.8, 11.9, 13.8, 7.8, 18.5, 20.7, 5.9, 9.9] 	
+Step: 31001 	 Loss: 4.1038 	 <Loss>: 4.0978 	 Lin. Disentanglement: 0.9956 	 Perm. Disentanglement: 0.9342
+learned lambda values: [15.9, 22.4, 19.8, 11.9, 13.8, 7.8, 18.5, 20.8, 5.9, 9.9] 	
+Step: 31251 	 Loss: 4.1676 	 <Loss>: 4.0939 	 Lin. Disentanglement: 0.9955 	 Perm. Disentanglement: 0.9345
+learned lambda values: [15.9, 22.4, 19.8, 11.8, 13.8, 7.8, 18.5, 20.8, 5.9, 9.8] 	
+Step: 31501 	 Loss: 4.0639 	 <Loss>: 4.0908 	 Lin. Disentanglement: 0.9926 	 Perm. Disentanglement: 0.9274
+learned lambda values: [15.9, 22.5, 19.8, 11.8, 13.8, 7.8, 18.5, 20.9, 5.9, 9.8] 	
+Step: 31751 	 Loss: 4.0797 	 <Loss>: 4.1030 	 Lin. Disentanglement: 0.9956 	 Perm. Disentanglement: 0.9335
+learned lambda values: [15.8, 22.5, 19.8, 11.8, 13.7, 7.8, 18.5, 20.9, 5.9, 9.8] 	
+Step: 32001 	 Loss: 4.1011 	 <Loss>: 4.0930 	 Lin. Disentanglement: 0.9943 	 Perm. Disentanglement: 0.9332
+learned lambda values: [15.8, 22.6, 19.8, 11.8, 13.7, 7.8, 18.5, 20.9, 5.9, 9.8] 	
+Step: 32251 	 Loss: 4.1359 	 <Loss>: 4.0956 	 Lin. Disentanglement: 0.9963 	 Perm. Disentanglement: 0.9347
+learned lambda values: [15.8, 22.6, 19.8, 11.8, 13.7, 7.8, 18.5, 20.9, 5.9, 9.8] 	
+Step: 32501 	 Loss: 4.1623 	 <Loss>: 4.0963 	 Lin. Disentanglement: 0.9947 	 Perm. Disentanglement: 0.9355
+learned lambda values: [15.8, 22.7, 19.8, 11.8, 13.7, 7.8, 18.5, 20.9, 5.9, 9.8] 	
+Step: 32751 	 Loss: 4.1018 	 <Loss>: 4.0922 	 Lin. Disentanglement: 0.9949 	 Perm. Disentanglement: 0.9335
+learned lambda values: [15.8, 22.7, 19.8, 11.8, 13.7, 7.8, 18.5, 20.9, 5.9, 9.8] 	
+Step: 33001 	 Loss: 4.0560 	 <Loss>: 4.0939 	 Lin. Disentanglement: 0.9952 	 Perm. Disentanglement: 0.9358
+learned lambda values: [15.8, 22.8, 19.8, 11.8, 13.7, 7.8, 18.5, 21.0, 5.9, 9.8] 	
+Step: 33251 	 Loss: 4.1111 	 <Loss>: 4.0989 	 Lin. Disentanglement: 0.9951 	 Perm. Disentanglement: 0.9372
+learned lambda values: [15.8, 22.8, 19.8, 11.8, 13.7, 7.8, 18.5, 21.0, 5.9, 9.8] 	
+Step: 33501 	 Loss: 4.1630 	 <Loss>: 4.0987 	 Lin. Disentanglement: 0.9955 	 Perm. Disentanglement: 0.9372
+learned lambda values: [15.8, 22.9, 19.8, 11.7, 13.7, 7.8, 18.5, 21.0, 5.9, 9.8] 	
+Step: 33751 	 Loss: 4.1541 	 <Loss>: 4.1006 	 Lin. Disentanglement: 0.9948 	 Perm. Disentanglement: 0.9395
+learned lambda values: [15.8, 22.9, 19.8, 11.7, 13.7, 7.8, 18.5, 21.0, 5.9, 9.8] 	
+Step: 34001 	 Loss: 4.0322 	 <Loss>: 4.0934 	 Lin. Disentanglement: 0.9951 	 Perm. Disentanglement: 0.9365
+learned lambda values: [15.8, 22.9, 19.8, 11.7, 13.7, 7.8, 18.5, 21.0, 5.9, 9.8] 	
+Step: 34251 	 Loss: 4.0702 	 <Loss>: 4.0940 	 Lin. Disentanglement: 0.9954 	 Perm. Disentanglement: 0.9348
+learned lambda values: [15.8, 23.0, 19.8, 11.7, 13.7, 7.8, 18.5, 21.1, 5.9, 9.7] 	
+Step: 34501 	 Loss: 4.1398 	 <Loss>: 4.0970 	 Lin. Disentanglement: 0.9954 	 Perm. Disentanglement: 0.9375
+learned lambda values: [15.8, 23.0, 19.8, 11.7, 13.7, 7.8, 18.5, 21.1, 5.9, 9.7] 	
+Step: 34751 	 Loss: 3.9786 	 <Loss>: 4.0975 	 Lin. Disentanglement: 0.9953 	 Perm. Disentanglement: 0.9391
+learned lambda values: [15.8, 23.0, 19.8, 11.7, 13.7, 7.8, 18.5, 21.1, 5.9, 9.7] 	
+Step: 35001 	 Loss: 4.1636 	 <Loss>: 4.0948 	 Lin. Disentanglement: 0.9960 	 Perm. Disentanglement: 0.9405
+learned lambda values: [15.8, 23.1, 19.8, 11.7, 13.7, 7.7, 18.5, 21.1, 5.9, 9.7] 	
+Step: 35251 	 Loss: 4.0136 	 <Loss>: 4.0924 	 Lin. Disentanglement: 0.9953 	 Perm. Disentanglement: 0.9415
+learned lambda values: [15.8, 23.1, 19.8, 11.7, 13.7, 7.8, 18.5, 21.1, 5.9, 9.7] 	
+Step: 35501 	 Loss: 4.0990 	 <Loss>: 4.0757 	 Lin. Disentanglement: 0.9954 	 Perm. Disentanglement: 0.9428
+learned lambda values: [15.8, 23.1, 19.9, 11.7, 13.7, 7.8, 18.5, 21.2, 5.9, 9.8] 	
+Step: 35751 	 Loss: 4.1075 	 <Loss>: 4.0871 	 Lin. Disentanglement: 0.9946 	 Perm. Disentanglement: 0.9414
+learned lambda values: [15.8, 23.2, 19.8, 11.7, 13.7, 7.8, 18.5, 21.2, 5.9, 9.8] 	
+Step: 36001 	 Loss: 4.1324 	 <Loss>: 4.0951 	 Lin. Disentanglement: 0.9950 	 Perm. Disentanglement: 0.9429
+learned lambda values: [15.8, 23.2, 19.9, 11.7, 13.7, 7.8, 18.5, 21.2, 5.9, 9.7] 	
+Step: 36251 	 Loss: 4.0499 	 <Loss>: 4.0971 	 Lin. Disentanglement: 0.9957 	 Perm. Disentanglement: 0.9422
+learned lambda values: [15.8, 23.2, 19.8, 11.7, 13.7, 7.8, 18.5, 21.2, 5.9, 9.7] 	
+Step: 36501 	 Loss: 4.1672 	 <Loss>: 4.0850 	 Lin. Disentanglement: 0.9949 	 Perm. Disentanglement: 0.9408
+learned lambda values: [15.8, 23.3, 19.8, 11.7, 13.7, 7.8, 18.5, 21.2, 5.9, 9.7] 	
+Step: 36751 	 Loss: 4.0721 	 <Loss>: 4.0924 	 Lin. Disentanglement: 0.9957 	 Perm. Disentanglement: 0.9416
+learned lambda values: [15.8, 23.3, 19.8, 11.7, 13.7, 7.8, 18.5, 21.2, 5.9, 9.7] 	
+Step: 37001 	 Loss: 4.0946 	 <Loss>: 4.0899 	 Lin. Disentanglement: 0.9956 	 Perm. Disentanglement: 0.9438
+learned lambda values: [15.8, 23.3, 19.8, 11.7, 13.7, 7.8, 18.5, 21.2, 5.9, 9.7] 	
+Step: 37251 	 Loss: 4.0589 	 <Loss>: 4.0890 	 Lin. Disentanglement: 0.9956 	 Perm. Disentanglement: 0.9442
+learned lambda values: [15.7, 23.3, 19.8, 11.7, 13.7, 7.8, 18.5, 21.2, 5.9, 9.7] 	
+Step: 37501 	 Loss: 4.0247 	 <Loss>: 4.0879 	 Lin. Disentanglement: 0.9951 	 Perm. Disentanglement: 0.9459
+learned lambda values: [15.7, 23.4, 19.8, 11.7, 13.7, 7.8, 18.4, 21.3, 5.9, 9.7] 	
+Step: 37751 	 Loss: 4.0193 	 <Loss>: 4.0873 	 Lin. Disentanglement: 0.9952 	 Perm. Disentanglement: 0.9455
+learned lambda values: [15.8, 23.4, 19.9, 11.7, 13.7, 7.8, 18.5, 21.3, 5.9, 9.7] 	
+Step: 38001 	 Loss: 4.0545 	 <Loss>: 4.0887 	 Lin. Disentanglement: 0.9951 	 Perm. Disentanglement: 0.9389
+learned lambda values: [15.8, 23.4, 19.9, 11.7, 13.7, 7.8, 18.4, 21.3, 5.9, 9.7] 	
+Step: 38251 	 Loss: 4.0564 	 <Loss>: 4.0910 	 Lin. Disentanglement: 0.9949 	 Perm. Disentanglement: 0.9431
+learned lambda values: [15.8, 23.4, 19.8, 11.7, 13.7, 7.7, 18.4, 21.3, 5.9, 9.7] 	
+Step: 38501 	 Loss: 4.1221 	 <Loss>: 4.0883 	 Lin. Disentanglement: 0.9961 	 Perm. Disentanglement: 0.9439
+learned lambda values: [15.8, 23.4, 19.8, 11.7, 13.7, 7.8, 18.4, 21.3, 5.9, 9.7] 	
+Step: 38751 	 Loss: 4.0624 	 <Loss>: 4.0921 	 Lin. Disentanglement: 0.9963 	 Perm. Disentanglement: 0.9481
+learned lambda values: [15.8, 23.5, 19.8, 11.7, 13.7, 7.8, 18.4, 21.3, 5.9, 9.7] 	
+Step: 39001 	 Loss: 4.1683 	 <Loss>: 4.0903 	 Lin. Disentanglement: 0.9957 	 Perm. Disentanglement: 0.9472
+learned lambda values: [15.8, 23.5, 19.8, 11.7, 13.7, 7.8, 18.4, 21.3, 5.9, 9.7] 	
+Step: 39251 	 Loss: 3.9854 	 <Loss>: 4.0838 	 Lin. Disentanglement: 0.9959 	 Perm. Disentanglement: 0.9478
+learned lambda values: [15.8, 23.5, 19.8, 11.7, 13.7, 7.8, 18.4, 21.3, 5.9, 9.7] 	
+Step: 39501 	 Loss: 4.0366 	 <Loss>: 4.0886 	 Lin. Disentanglement: 0.9960 	 Perm. Disentanglement: 0.9453
+learned lambda values: [15.7, 23.5, 19.8, 11.7, 13.7, 7.8, 18.4, 21.3, 5.9, 9.7] 	
+Step: 39751 	 Loss: 4.1206 	 <Loss>: 4.0874 	 Lin. Disentanglement: 0.9943 	 Perm. Disentanglement: 0.9444
+learned lambda values: [15.7, 23.5, 19.8, 11.7, 13.7, 7.8, 18.5, 21.4, 5.9, 9.7] 	
+Step: 40001 	 Loss: 4.0775 	 <Loss>: 4.0942 	 Lin. Disentanglement: 0.9957 	 Perm. Disentanglement: 0.9469
+learned lambda values: [15.7, 23.6, 19.8, 11.7, 13.7, 7.8, 18.4, 21.4, 5.9, 9.7] 	
+Step: 40251 	 Loss: 4.0876 	 <Loss>: 4.0850 	 Lin. Disentanglement: 0.9956 	 Perm. Disentanglement: 0.9467
+learned lambda values: [15.7, 23.6, 19.8, 11.7, 13.7, 7.8, 18.4, 21.4, 5.9, 9.7] 	
+Step: 40501 	 Loss: 4.0736 	 <Loss>: 4.0879 	 Lin. Disentanglement: 0.9948 	 Perm. Disentanglement: 0.9452
+learned lambda values: [15.7, 23.6, 19.8, 11.7, 13.7, 7.8, 18.4, 21.4, 5.9, 9.7] 	
+Step: 40751 	 Loss: 4.1057 	 <Loss>: 4.0900 	 Lin. Disentanglement: 0.9930 	 Perm. Disentanglement: 0.9445
+learned lambda values: [15.7, 23.6, 19.8, 11.7, 13.7, 7.8, 18.4, 21.4, 5.9, 9.7] 	
+Step: 41001 	 Loss: 4.2091 	 <Loss>: 4.0872 	 Lin. Disentanglement: 0.9957 	 Perm. Disentanglement: 0.9480
+learned lambda values: [15.7, 23.6, 19.8, 11.7, 13.7, 7.8, 18.4, 21.4, 5.9, 9.7] 	
+Step: 41251 	 Loss: 4.0407 	 <Loss>: 4.0893 	 Lin. Disentanglement: 0.9957 	 Perm. Disentanglement: 0.9485
+learned lambda values: [15.7, 23.6, 19.8, 11.7, 13.7, 7.7, 18.4, 21.4, 5.9, 9.7] 	
+Step: 41501 	 Loss: 4.1116 	 <Loss>: 4.0904 	 Lin. Disentanglement: 0.9961 	 Perm. Disentanglement: 0.9507
+learned lambda values: [15.7, 23.6, 19.8, 11.7, 13.7, 7.7, 18.4, 21.4, 5.9, 9.7] 	
+Step: 41751 	 Loss: 4.0188 	 <Loss>: 4.0829 	 Lin. Disentanglement: 0.9955 	 Perm. Disentanglement: 0.9520
+learned lambda values: [15.7, 23.7, 19.8, 11.7, 13.7, 7.7, 18.4, 21.4, 5.9, 9.7] 	
+Step: 42001 	 Loss: 3.9887 	 <Loss>: 4.0811 	 Lin. Disentanglement: 0.9950 	 Perm. Disentanglement: 0.9507
+learned lambda values: [15.7, 23.7, 19.8, 11.7, 13.7, 7.8, 18.4, 21.4, 5.9, 9.7] 	
+Step: 42251 	 Loss: 4.0936 	 <Loss>: 4.0897 	 Lin. Disentanglement: 0.9955 	 Perm. Disentanglement: 0.9532
+learned lambda values: [15.7, 23.7, 19.8, 11.7, 13.7, 7.7, 18.4, 21.5, 5.9, 9.7] 	
+Step: 42501 	 Loss: 3.9434 	 <Loss>: 4.0817 	 Lin. Disentanglement: 0.9955 	 Perm. Disentanglement: 0.9484
+learned lambda values: [15.7, 23.7, 19.8, 11.7, 13.7, 7.8, 18.4, 21.5, 5.9, 9.7] 	
+Step: 42751 	 Loss: 4.0527 	 <Loss>: 4.0921 	 Lin. Disentanglement: 0.9966 	 Perm. Disentanglement: 0.9497
+learned lambda values: [15.7, 23.7, 19.8, 11.7, 13.7, 7.7, 18.4, 21.5, 5.9, 9.7] 	
+Step: 43001 	 Loss: 4.0247 	 <Loss>: 4.0848 	 Lin. Disentanglement: 0.9956 	 Perm. Disentanglement: 0.9493
+learned lambda values: [15.7, 23.7, 19.8, 11.7, 13.7, 7.7, 18.4, 21.5, 5.9, 9.7] 	
+Step: 43251 	 Loss: 4.0747 	 <Loss>: 4.0863 	 Lin. Disentanglement: 0.9956 	 Perm. Disentanglement: 0.9510
+learned lambda values: [15.7, 23.7, 19.8, 11.6, 13.7, 7.8, 18.4, 21.5, 5.9, 9.7] 	
+Step: 43501 	 Loss: 4.1515 	 <Loss>: 4.0882 	 Lin. Disentanglement: 0.9961 	 Perm. Disentanglement: 0.9505
+learned lambda values: [15.7, 23.7, 19.8, 11.7, 13.7, 7.7, 18.4, 21.5, 5.9, 9.7] 	
+Step: 43751 	 Loss: 3.9942 	 <Loss>: 4.0881 	 Lin. Disentanglement: 0.9940 	 Perm. Disentanglement: 0.9479
+learned lambda values: [15.7, 23.8, 19.8, 11.6, 13.7, 7.7, 18.4, 21.5, 5.9, 9.7] 	
+Step: 44001 	 Loss: 4.1087 	 <Loss>: 4.0836 	 Lin. Disentanglement: 0.9964 	 Perm. Disentanglement: 0.9516
+learned lambda values: [15.7, 23.8, 19.8, 11.7, 13.7, 7.7, 18.4, 21.5, 5.9, 9.7] 	
+Step: 44251 	 Loss: 4.1057 	 <Loss>: 4.0914 	 Lin. Disentanglement: 0.9935 	 Perm. Disentanglement: 0.9532
+learned lambda values: [15.7, 23.8, 19.8, 11.7, 13.7, 7.7, 18.4, 21.5, 5.9, 9.7] 	
+Step: 44501 	 Loss: 4.0392 	 <Loss>: 4.0861 	 Lin. Disentanglement: 0.9961 	 Perm. Disentanglement: 0.9547
+learned lambda values: [15.7, 23.8, 19.8, 11.7, 13.7, 7.7, 18.4, 21.5, 5.9, 9.7] 	
+Step: 44751 	 Loss: 4.1279 	 <Loss>: 4.0788 	 Lin. Disentanglement: 0.9963 	 Perm. Disentanglement: 0.9532
+learned lambda values: [15.7, 23.8, 19.8, 11.7, 13.7, 7.8, 18.4, 21.5, 5.9, 9.7] 	
+Step: 45001 	 Loss: 4.0165 	 <Loss>: 4.0835 	 Lin. Disentanglement: 0.9952 	 Perm. Disentanglement: 0.9539
+learned lambda values: [15.7, 23.8, 19.8, 11.7, 13.7, 7.8, 18.4, 21.5, 5.9, 9.7] 	
+Step: 45251 	 Loss: 4.0848 	 <Loss>: 4.0808 	 Lin. Disentanglement: 0.9959 	 Perm. Disentanglement: 0.9510
+learned lambda values: [15.7, 23.8, 19.8, 11.7, 13.7, 7.8, 18.4, 21.5, 5.9, 9.7] 	
+Step: 45501 	 Loss: 4.0924 	 <Loss>: 4.0851 	 Lin. Disentanglement: 0.9957 	 Perm. Disentanglement: 0.9554
+learned lambda values: [15.7, 23.8, 19.8, 11.7, 13.7, 7.8, 18.4, 21.5, 5.9, 9.7] 	
+Step: 45751 	 Loss: 4.1083 	 <Loss>: 4.0826 	 Lin. Disentanglement: 0.9955 	 Perm. Disentanglement: 0.9568
+learned lambda values: [15.7, 23.8, 19.8, 11.7, 13.7, 7.8, 18.4, 21.5, 5.9, 9.7] 	
+Step: 46001 	 Loss: 4.0818 	 <Loss>: 4.0875 	 Lin. Disentanglement: 0.9949 	 Perm. Disentanglement: 0.9548
+learned lambda values: [15.7, 23.8, 19.8, 11.7, 13.7, 7.8, 18.4, 21.5, 5.9, 9.7] 	
+Step: 46251 	 Loss: 4.1175 	 <Loss>: 4.0845 	 Lin. Disentanglement: 0.9951 	 Perm. Disentanglement: 0.9559
+learned lambda values: [15.7, 23.8, 19.8, 11.7, 13.7, 7.8, 18.4, 21.5, 5.9, 9.7] 	
+Step: 46501 	 Loss: 4.0673 	 <Loss>: 4.0856 	 Lin. Disentanglement: 0.9964 	 Perm. Disentanglement: 0.9546
+learned lambda values: [15.7, 23.8, 19.8, 11.7, 13.7, 7.7, 18.4, 21.5, 5.9, 9.7] 	
+Step: 46751 	 Loss: 4.1208 	 <Loss>: 4.0860 	 Lin. Disentanglement: 0.9953 	 Perm. Disentanglement: 0.9538
+learned lambda values: [15.7, 23.8, 19.8, 11.7, 13.7, 7.7, 18.4, 21.6, 5.9, 9.7] 	
+Step: 47001 	 Loss: 4.0867 	 <Loss>: 4.0847 	 Lin. Disentanglement: 0.9949 	 Perm. Disentanglement: 0.9548
+learned lambda values: [15.7, 23.8, 19.8, 11.7, 13.7, 7.7, 18.4, 21.6, 5.9, 9.7] 	
+Step: 47251 	 Loss: 4.1396 	 <Loss>: 4.0846 	 Lin. Disentanglement: 0.9970 	 Perm. Disentanglement: 0.9567
+learned lambda values: [15.7, 23.8, 19.8, 11.7, 13.7, 7.7, 18.4, 21.6, 5.9, 9.7] 	
+Step: 47501 	 Loss: 4.0431 	 <Loss>: 4.0834 	 Lin. Disentanglement: 0.9961 	 Perm. Disentanglement: 0.9546
+learned lambda values: [15.7, 23.9, 19.8, 11.7, 13.7, 7.7, 18.4, 21.6, 5.9, 9.7] 	
+Step: 47751 	 Loss: 4.0437 	 <Loss>: 4.0871 	 Lin. Disentanglement: 0.9964 	 Perm. Disentanglement: 0.9581
+learned lambda values: [15.7, 23.9, 19.8, 11.7, 13.7, 7.7, 18.4, 21.6, 5.9, 9.7] 	
+Step: 48001 	 Loss: 4.1031 	 <Loss>: 4.0903 	 Lin. Disentanglement: 0.9937 	 Perm. Disentanglement: 0.9545
+learned lambda values: [15.7, 23.9, 19.8, 11.7, 13.7, 7.7, 18.3, 21.6, 5.9, 9.7] 	
+Step: 48251 	 Loss: 4.0518 	 <Loss>: 4.0873 	 Lin. Disentanglement: 0.9960 	 Perm. Disentanglement: 0.9556
+learned lambda values: [15.7, 23.9, 19.8, 11.7, 13.7, 7.7, 18.3, 21.6, 5.9, 9.7] 	
+Step: 48501 	 Loss: 4.2297 	 <Loss>: 4.0867 	 Lin. Disentanglement: 0.9957 	 Perm. Disentanglement: 0.9563
+learned lambda values: [15.7, 23.9, 19.8, 11.7, 13.7, 7.7, 18.3, 21.6, 5.9, 9.7] 	
+Step: 48751 	 Loss: 4.0653 	 <Loss>: 4.0860 	 Lin. Disentanglement: 0.9961 	 Perm. Disentanglement: 0.9578
+learned lambda values: [15.7, 23.9, 19.8, 11.7, 13.7, 7.7, 18.3, 21.6, 5.8, 9.7] 	
+Step: 49001 	 Loss: 4.1375 	 <Loss>: 4.0840 	 Lin. Disentanglement: 0.9953 	 Perm. Disentanglement: 0.9567
+learned lambda values: [15.7, 23.9, 19.8, 11.7, 13.7, 7.7, 18.3, 21.6, 5.9, 9.7] 	
+Step: 49251 	 Loss: 4.1752 	 <Loss>: 4.0855 	 Lin. Disentanglement: 0.9961 	 Perm. Disentanglement: 0.9574
+learned lambda values: [15.7, 23.9, 19.8, 11.7, 13.7, 7.7, 18.3, 21.6, 5.9, 9.7] 	
+Step: 49501 	 Loss: 4.0749 	 <Loss>: 4.0870 	 Lin. Disentanglement: 0.9957 	 Perm. Disentanglement: 0.9574
+learned lambda values: [15.7, 23.9, 19.7, 11.7, 13.7, 7.7, 18.3, 21.6, 5.9, 9.7] 	
+Step: 49751 	 Loss: 4.1492 	 <Loss>: 4.0891 	 Lin. Disentanglement: 0.9955 	 Perm. Disentanglement: 0.9592
+learned lambda values: [15.7, 23.9, 19.7, 11.6, 13.7, 7.7, 18.3, 21.6, 5.9, 9.7] 	
+Step: 50001 	 Loss: 4.0349 	 <Loss>: 4.0811 	 Lin. Disentanglement: 0.9969 	 Perm. Disentanglement: 0.9614
+learned lambda values: [15.7, 23.9, 19.8, 11.7, 13.7, 7.7, 18.3, 21.6, 5.9, 9.7] 	
+Step: 50251 	 Loss: 4.0987 	 <Loss>: 4.0824 	 Lin. Disentanglement: 0.9959 	 Perm. Disentanglement: 0.9568
+learned lambda values: [15.7, 23.9, 19.8, 11.7, 13.7, 7.7, 18.3, 21.6, 5.9, 9.7] 	
+Step: 50501 	 Loss: 4.0976 	 <Loss>: 4.0807 	 Lin. Disentanglement: 0.9955 	 Perm. Disentanglement: 0.9612
+learned lambda values: [15.7, 23.9, 19.8, 11.7, 13.7, 7.7, 18.3, 21.6, 5.9, 9.7] 	
+Step: 50751 	 Loss: 4.1146 	 <Loss>: 4.0864 	 Lin. Disentanglement: 0.9964 	 Perm. Disentanglement: 0.9603
+learned lambda values: [15.7, 23.9, 19.8, 11.6, 13.7, 7.7, 18.3, 21.6, 5.9, 9.7] 	
+Step: 51001 	 Loss: 4.1246 	 <Loss>: 4.0873 	 Lin. Disentanglement: 0.9957 	 Perm. Disentanglement: 0.9588
+learned lambda values: [15.7, 23.9, 19.7, 11.7, 13.7, 7.7, 18.3, 21.6, 5.9, 9.7] 	
+Step: 51251 	 Loss: 3.9303 	 <Loss>: 4.0799 	 Lin. Disentanglement: 0.9956 	 Perm. Disentanglement: 0.9586
+learned lambda values: [15.7, 23.9, 19.8, 11.7, 13.7, 7.8, 18.3, 21.6, 5.9, 9.7] 	
+Step: 51501 	 Loss: 4.0617 	 <Loss>: 4.0863 	 Lin. Disentanglement: 0.9964 	 Perm. Disentanglement: 0.9616
+learned lambda values: [15.7, 23.9, 19.8, 11.6, 13.7, 7.8, 18.3, 21.7, 5.9, 9.7] 	
+Step: 51751 	 Loss: 4.1044 	 <Loss>: 4.0807 	 Lin. Disentanglement: 0.9966 	 Perm. Disentanglement: 0.9595
+learned lambda values: [15.7, 23.9, 19.8, 11.6, 13.7, 7.8, 18.3, 21.7, 5.9, 9.7] 	
+Step: 52001 	 Loss: 4.2015 	 <Loss>: 4.0813 	 Lin. Disentanglement: 0.9957 	 Perm. Disentanglement: 0.9600
+learned lambda values: [15.7, 23.9, 19.8, 11.7, 13.7, 7.8, 18.3, 21.7, 5.9, 9.7] 	
+Step: 52251 	 Loss: 4.1605 	 <Loss>: 4.0882 	 Lin. Disentanglement: 0.9955 	 Perm. Disentanglement: 0.9648
+learned lambda values: [15.7, 23.9, 19.8, 11.6, 13.7, 7.7, 18.3, 21.7, 5.9, 9.7] 	
+Step: 52501 	 Loss: 4.1836 	 <Loss>: 4.0822 	 Lin. Disentanglement: 0.9967 	 Perm. Disentanglement: 0.9644
+learned lambda values: [15.7, 24.0, 19.8, 11.6, 13.7, 7.7, 18.3, 21.7, 5.9, 9.7] 	
+Step: 52751 	 Loss: 4.0606 	 <Loss>: 4.0866 	 Lin. Disentanglement: 0.9966 	 Perm. Disentanglement: 0.9604
+learned lambda values: [15.7, 24.0, 19.8, 11.6, 13.7, 7.7, 18.3, 21.7, 5.9, 9.7] 	
+Step: 53001 	 Loss: 4.0770 	 <Loss>: 4.0901 	 Lin. Disentanglement: 0.9969 	 Perm. Disentanglement: 0.9627
+learned lambda values: [15.7, 24.0, 19.8, 11.6, 13.7, 7.8, 18.3, 21.7, 5.8, 9.7] 	
+Step: 53251 	 Loss: 4.0267 	 <Loss>: 4.0836 	 Lin. Disentanglement: 0.9968 	 Perm. Disentanglement: 0.9631
+learned lambda values: [15.7, 24.0, 19.8, 11.6, 13.7, 7.8, 18.3, 21.7, 5.8, 9.7] 	
+Step: 53501 	 Loss: 4.1716 	 <Loss>: 4.0842 	 Lin. Disentanglement: 0.9962 	 Perm. Disentanglement: 0.9617
+learned lambda values: [15.7, 24.0, 19.8, 11.6, 13.7, 7.8, 18.3, 21.7, 5.9, 9.7] 	
+Step: 53751 	 Loss: 4.1603 	 <Loss>: 4.0789 	 Lin. Disentanglement: 0.9953 	 Perm. Disentanglement: 0.9608
+learned lambda values: [15.7, 24.0, 19.8, 11.7, 13.7, 7.8, 18.3, 21.7, 5.9, 9.7] 	
+Step: 54001 	 Loss: 4.0623 	 <Loss>: 4.0805 	 Lin. Disentanglement: 0.9969 	 Perm. Disentanglement: 0.9655
+learned lambda values: [15.7, 24.0, 19.8, 11.7, 13.7, 7.8, 18.3, 21.7, 5.9, 9.7] 	
+Step: 54251 	 Loss: 4.0508 	 <Loss>: 4.0824 	 Lin. Disentanglement: 0.9972 	 Perm. Disentanglement: 0.9643
+learned lambda values: [15.7, 24.0, 19.8, 11.7, 13.7, 7.8, 18.3, 21.7, 5.9, 9.7] 	
+Step: 54501 	 Loss: 4.1634 	 <Loss>: 4.0855 	 Lin. Disentanglement: 0.9953 	 Perm. Disentanglement: 0.9626
+learned lambda values: [15.7, 24.0, 19.7, 11.7, 13.7, 7.8, 18.3, 21.7, 5.8, 9.7] 	
+Step: 54751 	 Loss: 4.1795 	 <Loss>: 4.0812 	 Lin. Disentanglement: 0.9968 	 Perm. Disentanglement: 0.9636
+learned lambda values: [15.7, 24.0, 19.7, 11.7, 13.7, 7.8, 18.3, 21.7, 5.9, 9.7] 	
+Step: 55001 	 Loss: 4.0236 	 <Loss>: 4.0788 	 Lin. Disentanglement: 0.9971 	 Perm. Disentanglement: 0.9645
+learned lambda values: [15.7, 24.0, 19.8, 11.7, 13.7, 7.8, 18.2, 21.7, 5.9, 9.7] 	
+Step: 55251 	 Loss: 4.1491 	 <Loss>: 4.0836 	 Lin. Disentanglement: 0.9968 	 Perm. Disentanglement: 0.9646
+learned lambda values: [15.7, 24.0, 19.7, 11.7, 13.7, 7.8, 18.3, 21.7, 5.9, 9.7] 	
+Step: 55501 	 Loss: 4.2226 	 <Loss>: 4.0804 	 Lin. Disentanglement: 0.9961 	 Perm. Disentanglement: 0.9635
+learned lambda values: [15.7, 24.0, 19.8, 11.7, 13.7, 7.8, 18.3, 21.7, 5.9, 9.7] 	
+Step: 55751 	 Loss: 4.1157 	 <Loss>: 4.0761 	 Lin. Disentanglement: 0.9969 	 Perm. Disentanglement: 0.9642
+learned lambda values: [15.7, 24.0, 19.8, 11.7, 13.7, 7.8, 18.3, 21.7, 5.9, 9.7] 	
+Step: 56001 	 Loss: 4.0746 	 <Loss>: 4.0805 	 Lin. Disentanglement: 0.9965 	 Perm. Disentanglement: 0.9644
+learned lambda values: [15.7, 24.0, 19.8, 11.7, 13.7, 7.8, 18.3, 21.7, 5.9, 9.7] 	
+Step: 56251 	 Loss: 4.0547 	 <Loss>: 4.0877 	 Lin. Disentanglement: 0.9965 	 Perm. Disentanglement: 0.9637
+learned lambda values: [15.7, 24.0, 19.8, 11.7, 13.7, 7.7, 18.3, 21.7, 5.9, 9.7] 	
+Step: 56501 	 Loss: 4.0894 	 <Loss>: 4.0830 	 Lin. Disentanglement: 0.9965 	 Perm. Disentanglement: 0.9652
+learned lambda values: [15.7, 24.0, 19.7, 11.7, 13.7, 7.7, 18.3, 21.7, 5.9, 9.7] 	
+Step: 56751 	 Loss: 4.1533 	 <Loss>: 4.0729 	 Lin. Disentanglement: 0.9963 	 Perm. Disentanglement: 0.9635
+learned lambda values: [15.7, 24.0, 19.7, 11.7, 13.7, 7.8, 18.3, 21.7, 5.9, 9.7] 	
+Step: 57001 	 Loss: 4.1068 	 <Loss>: 4.0752 	 Lin. Disentanglement: 0.9972 	 Perm. Disentanglement: 0.9656
+learned lambda values: [15.7, 24.0, 19.8, 11.7, 13.7, 7.8, 18.3, 21.8, 5.9, 9.7] 	
+Step: 57251 	 Loss: 4.0361 	 <Loss>: 4.0802 	 Lin. Disentanglement: 0.9967 	 Perm. Disentanglement: 0.9644
+learned lambda values: [15.7, 24.0, 19.7, 11.7, 13.7, 7.8, 18.2, 21.8, 5.9, 9.7] 	
+Step: 57501 	 Loss: 3.9776 	 <Loss>: 4.0777 	 Lin. Disentanglement: 0.9961 	 Perm. Disentanglement: 0.9661
+learned lambda values: [15.7, 24.0, 19.8, 11.7, 13.7, 7.8, 18.3, 21.8, 5.9, 9.7] 	
+Step: 57751 	 Loss: 4.1118 	 <Loss>: 4.0807 	 Lin. Disentanglement: 0.9962 	 Perm. Disentanglement: 0.9657
+learned lambda values: [15.7, 24.0, 19.8, 11.7, 13.7, 7.8, 18.2, 21.8, 5.9, 9.7] 	
+Step: 58001 	 Loss: 4.1657 	 <Loss>: 4.0814 	 Lin. Disentanglement: 0.9971 	 Perm. Disentanglement: 0.9690
+learned lambda values: [15.7, 24.0, 19.8, 11.7, 13.7, 7.8, 18.2, 21.8, 5.9, 9.7] 	
+Step: 58251 	 Loss: 4.1418 	 <Loss>: 4.0784 	 Lin. Disentanglement: 0.9958 	 Perm. Disentanglement: 0.9640
+learned lambda values: [15.7, 24.0, 19.8, 11.7, 13.7, 7.8, 18.2, 21.8, 5.9, 9.7] 	
+Step: 58501 	 Loss: 4.0200 	 <Loss>: 4.0790 	 Lin. Disentanglement: 0.9965 	 Perm. Disentanglement: 0.9665
+learned lambda values: [15.7, 24.0, 19.8, 11.7, 13.7, 7.7, 18.2, 21.8, 5.9, 9.7] 	
+Step: 58751 	 Loss: 4.0599 	 <Loss>: 4.0834 	 Lin. Disentanglement: 0.9962 	 Perm. Disentanglement: 0.9674
+learned lambda values: [15.7, 24.0, 19.8, 11.7, 13.7, 7.7, 18.2, 21.8, 5.9, 9.7] 	
+Step: 59001 	 Loss: 4.0382 	 <Loss>: 4.0848 	 Lin. Disentanglement: 0.9952 	 Perm. Disentanglement: 0.9664
+learned lambda values: [15.7, 24.0, 19.7, 11.7, 13.7, 7.7, 18.2, 21.8, 5.9, 9.7] 	
+Step: 59251 	 Loss: 4.0870 	 <Loss>: 4.0807 	 Lin. Disentanglement: 0.9970 	 Perm. Disentanglement: 0.9690
+learned lambda values: [15.7, 24.0, 19.8, 11.7, 13.7, 7.7, 18.2, 21.8, 5.9, 9.7] 	
+Step: 59501 	 Loss: 4.0635 	 <Loss>: 4.0823 	 Lin. Disentanglement: 0.9957 	 Perm. Disentanglement: 0.9657
+learned lambda values: [15.7, 24.1, 19.7, 11.7, 13.7, 7.7, 18.2, 21.8, 5.9, 9.7] 	
+Step: 59751 	 Loss: 4.0552 	 <Loss>: 4.0796 	 Lin. Disentanglement: 0.9956 	 Perm. Disentanglement: 0.9681
+learned lambda values: [15.7, 24.1, 19.7, 11.7, 13.7, 7.7, 18.2, 21.8, 5.9, 9.7] 	
+Step: 60001 	 Loss: 4.1001 	 <Loss>: 4.0777 	 Lin. Disentanglement: 0.9960 	 Perm. Disentanglement: 0.9662
+learned lambda values: [15.7, 24.1, 19.7, 11.7, 13.7, 7.7, 18.2, 21.8, 5.9, 9.7] 	
+Step: 60251 	 Loss: 4.0181 	 <Loss>: 4.0836 	 Lin. Disentanglement: 0.9970 	 Perm. Disentanglement: 0.9703
+learned lambda values: [15.7, 24.1, 19.7, 11.7, 13.7, 7.8, 18.2, 21.8, 5.9, 9.7] 	
+Step: 60501 	 Loss: 4.1060 	 <Loss>: 4.0789 	 Lin. Disentanglement: 0.9958 	 Perm. Disentanglement: 0.9678
+learned lambda values: [15.7, 24.1, 19.7, 11.7, 13.7, 7.8, 18.2, 21.8, 5.9, 9.7] 	
+Step: 60751 	 Loss: 4.1175 	 <Loss>: 4.0767 	 Lin. Disentanglement: 0.9961 	 Perm. Disentanglement: 0.9687
+learned lambda values: [15.7, 24.1, 19.7, 11.7, 13.7, 7.8, 18.2, 21.8, 5.9, 9.7] 	
+Step: 61001 	 Loss: 4.0882 	 <Loss>: 4.0864 	 Lin. Disentanglement: 0.9949 	 Perm. Disentanglement: 0.9660
+learned lambda values: [15.7, 24.1, 19.7, 11.7, 13.7, 7.8, 18.2, 21.8, 5.9, 9.7] 	
+Step: 61251 	 Loss: 4.1193 	 <Loss>: 4.0765 	 Lin. Disentanglement: 0.9960 	 Perm. Disentanglement: 0.9681
+learned lambda values: [15.7, 24.1, 19.7, 11.7, 13.7, 7.8, 18.2, 21.8, 5.9, 9.7] 	
+Step: 61501 	 Loss: 4.1615 	 <Loss>: 4.0829 	 Lin. Disentanglement: 0.9960 	 Perm. Disentanglement: 0.9674
+learned lambda values: [15.7, 24.1, 19.7, 11.7, 13.7, 7.8, 18.2, 21.8, 5.9, 9.7] 	
+Step: 61751 	 Loss: 4.0674 	 <Loss>: 4.0789 	 Lin. Disentanglement: 0.9969 	 Perm. Disentanglement: 0.9716
+learned lambda values: [15.7, 24.1, 19.7, 11.7, 13.7, 7.8, 18.2, 21.8, 5.9, 9.7] 	
+Step: 62001 	 Loss: 3.9928 	 <Loss>: 4.0815 	 Lin. Disentanglement: 0.9950 	 Perm. Disentanglement: 0.9661
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.2, 21.8, 5.9, 9.7] 	
+Step: 62251 	 Loss: 4.0599 	 <Loss>: 4.0764 	 Lin. Disentanglement: 0.9960 	 Perm. Disentanglement: 0.9687
+learned lambda values: [15.7, 24.1, 19.7, 11.7, 13.7, 7.8, 18.2, 21.8, 5.9, 9.7] 	
+Step: 62501 	 Loss: 4.1341 	 <Loss>: 4.0806 	 Lin. Disentanglement: 0.9962 	 Perm. Disentanglement: 0.9712
+learned lambda values: [15.7, 24.1, 19.7, 11.7, 13.7, 7.8, 18.2, 21.8, 5.9, 9.7] 	
+Step: 62751 	 Loss: 4.0891 	 <Loss>: 4.0762 	 Lin. Disentanglement: 0.9959 	 Perm. Disentanglement: 0.9702
+learned lambda values: [15.7, 24.1, 19.7, 11.7, 13.7, 7.8, 18.2, 21.8, 5.9, 9.7] 	
+Step: 63001 	 Loss: 4.1506 	 <Loss>: 4.0809 	 Lin. Disentanglement: 0.9968 	 Perm. Disentanglement: 0.9712
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.2, 21.8, 5.9, 9.7] 	
+Step: 63251 	 Loss: 3.9660 	 <Loss>: 4.0742 	 Lin. Disentanglement: 0.9969 	 Perm. Disentanglement: 0.9698
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.2, 21.8, 5.9, 9.7] 	
+Step: 63501 	 Loss: 4.0274 	 <Loss>: 4.0778 	 Lin. Disentanglement: 0.9965 	 Perm. Disentanglement: 0.9716
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.2, 21.8, 5.9, 9.7] 	
+Step: 63751 	 Loss: 4.0653 	 <Loss>: 4.0726 	 Lin. Disentanglement: 0.9964 	 Perm. Disentanglement: 0.9712
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.2, 21.8, 5.9, 9.7] 	
+Step: 64001 	 Loss: 4.0042 	 <Loss>: 4.0759 	 Lin. Disentanglement: 0.9956 	 Perm. Disentanglement: 0.9708
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.2, 21.8, 5.9, 9.7] 	
+Step: 64251 	 Loss: 4.0980 	 <Loss>: 4.0785 	 Lin. Disentanglement: 0.9966 	 Perm. Disentanglement: 0.9725
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.2, 21.8, 5.9, 9.7] 	
+Step: 64501 	 Loss: 4.0844 	 <Loss>: 4.0743 	 Lin. Disentanglement: 0.9972 	 Perm. Disentanglement: 0.9725
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.2, 21.8, 5.9, 9.7] 	
+Step: 64751 	 Loss: 4.1384 	 <Loss>: 4.0790 	 Lin. Disentanglement: 0.9964 	 Perm. Disentanglement: 0.9713
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.2, 21.8, 5.9, 9.7] 	
+Step: 65001 	 Loss: 4.0528 	 <Loss>: 4.0769 	 Lin. Disentanglement: 0.9964 	 Perm. Disentanglement: 0.9711
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.2, 21.8, 5.9, 9.7] 	
+Step: 65251 	 Loss: 4.2619 	 <Loss>: 4.0785 	 Lin. Disentanglement: 0.9959 	 Perm. Disentanglement: 0.9735
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.2, 21.8, 5.9, 9.7] 	
+Step: 65501 	 Loss: 4.1795 	 <Loss>: 4.0790 	 Lin. Disentanglement: 0.9966 	 Perm. Disentanglement: 0.9729
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.2, 21.8, 5.9, 9.7] 	
+Step: 65751 	 Loss: 4.0785 	 <Loss>: 4.0762 	 Lin. Disentanglement: 0.9967 	 Perm. Disentanglement: 0.9719
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.2, 21.8, 5.9, 9.7] 	
+Step: 66001 	 Loss: 4.2401 	 <Loss>: 4.0757 	 Lin. Disentanglement: 0.9971 	 Perm. Disentanglement: 0.9733
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.2, 21.8, 5.9, 9.7] 	
+Step: 66251 	 Loss: 4.1323 	 <Loss>: 4.0726 	 Lin. Disentanglement: 0.9971 	 Perm. Disentanglement: 0.9742
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.2, 21.8, 5.9, 9.7] 	
+Step: 66501 	 Loss: 4.0397 	 <Loss>: 4.0730 	 Lin. Disentanglement: 0.9959 	 Perm. Disentanglement: 0.9728
+learned lambda values: [15.8, 24.1, 19.8, 11.7, 13.7, 7.8, 18.2, 21.8, 5.9, 9.7] 	
+Step: 66751 	 Loss: 4.0055 	 <Loss>: 4.0751 	 Lin. Disentanglement: 0.9949 	 Perm. Disentanglement: 0.9730
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.2, 21.8, 5.9, 9.7] 	
+Step: 67001 	 Loss: 4.0465 	 <Loss>: 4.0790 	 Lin. Disentanglement: 0.9966 	 Perm. Disentanglement: 0.9730
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.2, 21.8, 5.9, 9.7] 	
+Step: 67251 	 Loss: 4.1029 	 <Loss>: 4.0726 	 Lin. Disentanglement: 0.9973 	 Perm. Disentanglement: 0.9744
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.2, 21.8, 5.9, 9.7] 	
+Step: 67501 	 Loss: 4.1235 	 <Loss>: 4.0764 	 Lin. Disentanglement: 0.9968 	 Perm. Disentanglement: 0.9728
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.2, 21.8, 5.9, 9.7] 	
+Step: 67751 	 Loss: 4.1142 	 <Loss>: 4.0732 	 Lin. Disentanglement: 0.9962 	 Perm. Disentanglement: 0.9736
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.2, 21.9, 5.9, 9.7] 	
+Step: 68001 	 Loss: 4.1083 	 <Loss>: 4.0792 	 Lin. Disentanglement: 0.9966 	 Perm. Disentanglement: 0.9734
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.2, 21.8, 5.9, 9.7] 	
+Step: 68251 	 Loss: 4.1616 	 <Loss>: 4.0829 	 Lin. Disentanglement: 0.9968 	 Perm. Disentanglement: 0.9748
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.2, 21.8, 5.9, 9.7] 	
+Step: 68501 	 Loss: 4.0956 	 <Loss>: 4.0739 	 Lin. Disentanglement: 0.9968 	 Perm. Disentanglement: 0.9740
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.2, 21.9, 5.9, 9.7] 	
+Step: 68751 	 Loss: 4.0917 	 <Loss>: 4.0738 	 Lin. Disentanglement: 0.9969 	 Perm. Disentanglement: 0.9743
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.2, 21.9, 5.9, 9.7] 	
+Step: 69001 	 Loss: 3.9772 	 <Loss>: 4.0773 	 Lin. Disentanglement: 0.9968 	 Perm. Disentanglement: 0.9744
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.2, 21.9, 5.9, 9.7] 	
+Step: 69251 	 Loss: 4.0212 	 <Loss>: 4.0880 	 Lin. Disentanglement: 0.9961 	 Perm. Disentanglement: 0.9741
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 69501 	 Loss: 4.1718 	 <Loss>: 4.0733 	 Lin. Disentanglement: 0.9968 	 Perm. Disentanglement: 0.9736
+learned lambda values: [15.7, 24.1, 19.8, 11.6, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 69751 	 Loss: 4.1555 	 <Loss>: 4.0803 	 Lin. Disentanglement: 0.9974 	 Perm. Disentanglement: 0.9764
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 70001 	 Loss: 4.0847 	 <Loss>: 4.0706 	 Lin. Disentanglement: 0.9974 	 Perm. Disentanglement: 0.9755
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 70251 	 Loss: 4.2205 	 <Loss>: 4.0763 	 Lin. Disentanglement: 0.9962 	 Perm. Disentanglement: 0.9763
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 70501 	 Loss: 4.1088 	 <Loss>: 4.0798 	 Lin. Disentanglement: 0.9962 	 Perm. Disentanglement: 0.9742
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 70751 	 Loss: 4.0947 	 <Loss>: 4.0734 	 Lin. Disentanglement: 0.9956 	 Perm. Disentanglement: 0.9741
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 71001 	 Loss: 4.0225 	 <Loss>: 4.0769 	 Lin. Disentanglement: 0.9956 	 Perm. Disentanglement: 0.9760
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 71251 	 Loss: 4.1217 	 <Loss>: 4.0792 	 Lin. Disentanglement: 0.9966 	 Perm. Disentanglement: 0.9765
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 71501 	 Loss: 4.0734 	 <Loss>: 4.0819 	 Lin. Disentanglement: 0.9975 	 Perm. Disentanglement: 0.9760
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 71751 	 Loss: 4.0002 	 <Loss>: 4.0750 	 Lin. Disentanglement: 0.9961 	 Perm. Disentanglement: 0.9748
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.7, 18.1, 21.9, 5.9, 9.7] 	
+Step: 72001 	 Loss: 4.0907 	 <Loss>: 4.0777 	 Lin. Disentanglement: 0.9969 	 Perm. Disentanglement: 0.9767
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 72251 	 Loss: 4.0510 	 <Loss>: 4.0806 	 Lin. Disentanglement: 0.9965 	 Perm. Disentanglement: 0.9764
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.1, 21.9, 5.8, 9.7] 	
+Step: 72501 	 Loss: 4.1430 	 <Loss>: 4.0761 	 Lin. Disentanglement: 0.9969 	 Perm. Disentanglement: 0.9770
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 72751 	 Loss: 3.9708 	 <Loss>: 4.0823 	 Lin. Disentanglement: 0.9972 	 Perm. Disentanglement: 0.9777
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 73001 	 Loss: 4.0519 	 <Loss>: 4.0736 	 Lin. Disentanglement: 0.9958 	 Perm. Disentanglement: 0.9761
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 73251 	 Loss: 4.1157 	 <Loss>: 4.0796 	 Lin. Disentanglement: 0.9957 	 Perm. Disentanglement: 0.9757
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 73501 	 Loss: 4.0624 	 <Loss>: 4.0731 	 Lin. Disentanglement: 0.9969 	 Perm. Disentanglement: 0.9780
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 73751 	 Loss: 4.1149 	 <Loss>: 4.0720 	 Lin. Disentanglement: 0.9963 	 Perm. Disentanglement: 0.9770
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 74001 	 Loss: 3.9855 	 <Loss>: 4.0745 	 Lin. Disentanglement: 0.9973 	 Perm. Disentanglement: 0.9774
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 74251 	 Loss: 4.0069 	 <Loss>: 4.0730 	 Lin. Disentanglement: 0.9972 	 Perm. Disentanglement: 0.9777
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 74501 	 Loss: 4.0280 	 <Loss>: 4.0635 	 Lin. Disentanglement: 0.9967 	 Perm. Disentanglement: 0.9776
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 74751 	 Loss: 4.0788 	 <Loss>: 4.0728 	 Lin. Disentanglement: 0.9970 	 Perm. Disentanglement: 0.9787
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 75001 	 Loss: 4.0828 	 <Loss>: 4.0758 	 Lin. Disentanglement: 0.9962 	 Perm. Disentanglement: 0.9765
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 75251 	 Loss: 4.0775 	 <Loss>: 4.0757 	 Lin. Disentanglement: 0.9961 	 Perm. Disentanglement: 0.9775
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 75501 	 Loss: 4.0999 	 <Loss>: 4.0681 	 Lin. Disentanglement: 0.9965 	 Perm. Disentanglement: 0.9782
+learned lambda values: [15.8, 24.1, 19.8, 11.7, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 75751 	 Loss: 4.0902 	 <Loss>: 4.0762 	 Lin. Disentanglement: 0.9972 	 Perm. Disentanglement: 0.9792
+learned lambda values: [15.8, 24.1, 19.8, 11.7, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 76001 	 Loss: 4.0800 	 <Loss>: 4.0828 	 Lin. Disentanglement: 0.9971 	 Perm. Disentanglement: 0.9782
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 76251 	 Loss: 4.1576 	 <Loss>: 4.0761 	 Lin. Disentanglement: 0.9959 	 Perm. Disentanglement: 0.9777
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 76501 	 Loss: 4.0223 	 <Loss>: 4.0758 	 Lin. Disentanglement: 0.9969 	 Perm. Disentanglement: 0.9786
+learned lambda values: [15.7, 24.1, 19.8, 11.6, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 76751 	 Loss: 4.0897 	 <Loss>: 4.0774 	 Lin. Disentanglement: 0.9973 	 Perm. Disentanglement: 0.9792
+learned lambda values: [15.7, 24.1, 19.8, 11.6, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 77001 	 Loss: 4.0719 	 <Loss>: 4.0725 	 Lin. Disentanglement: 0.9972 	 Perm. Disentanglement: 0.9789
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 77251 	 Loss: 4.0802 	 <Loss>: 4.0802 	 Lin. Disentanglement: 0.9973 	 Perm. Disentanglement: 0.9802
+learned lambda values: [15.7, 24.1, 19.8, 11.6, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 77501 	 Loss: 4.0471 	 <Loss>: 4.0777 	 Lin. Disentanglement: 0.9976 	 Perm. Disentanglement: 0.9795
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 77751 	 Loss: 4.0991 	 <Loss>: 4.0749 	 Lin. Disentanglement: 0.9960 	 Perm. Disentanglement: 0.9804
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 78001 	 Loss: 4.1486 	 <Loss>: 4.0700 	 Lin. Disentanglement: 0.9964 	 Perm. Disentanglement: 0.9792
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 78251 	 Loss: 3.9455 	 <Loss>: 4.0818 	 Lin. Disentanglement: 0.9970 	 Perm. Disentanglement: 0.9794
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 78501 	 Loss: 4.0809 	 <Loss>: 4.0811 	 Lin. Disentanglement: 0.9971 	 Perm. Disentanglement: 0.9787
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.7, 18.1, 21.9, 5.9, 9.7] 	
+Step: 78751 	 Loss: 4.0290 	 <Loss>: 4.0742 	 Lin. Disentanglement: 0.9972 	 Perm. Disentanglement: 0.9811
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 79001 	 Loss: 4.1198 	 <Loss>: 4.0703 	 Lin. Disentanglement: 0.9963 	 Perm. Disentanglement: 0.9795
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 79251 	 Loss: 4.0447 	 <Loss>: 4.0682 	 Lin. Disentanglement: 0.9972 	 Perm. Disentanglement: 0.9803
+learned lambda values: [15.7, 24.2, 19.8, 11.7, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 79501 	 Loss: 4.0273 	 <Loss>: 4.0719 	 Lin. Disentanglement: 0.9964 	 Perm. Disentanglement: 0.9799
+learned lambda values: [15.7, 24.2, 19.8, 11.7, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 79751 	 Loss: 4.1342 	 <Loss>: 4.0792 	 Lin. Disentanglement: 0.9971 	 Perm. Disentanglement: 0.9813
+learned lambda values: [15.7, 24.2, 19.8, 11.7, 13.7, 7.7, 18.1, 21.9, 5.9, 9.7] 	
+Step: 80001 	 Loss: 3.9976 	 <Loss>: 4.0721 	 Lin. Disentanglement: 0.9971 	 Perm. Disentanglement: 0.9803
+learned lambda values: [15.7, 24.2, 19.8, 11.7, 13.7, 7.7, 18.1, 21.9, 5.9, 9.7] 	
+Step: 80251 	 Loss: 4.0409 	 <Loss>: 4.0734 	 Lin. Disentanglement: 0.9958 	 Perm. Disentanglement: 0.9798
+learned lambda values: [15.7, 24.2, 19.8, 11.7, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 80501 	 Loss: 4.1061 	 <Loss>: 4.0739 	 Lin. Disentanglement: 0.9977 	 Perm. Disentanglement: 0.9820
+learned lambda values: [15.7, 24.2, 19.8, 11.7, 13.7, 7.7, 18.1, 22.0, 5.9, 9.7] 	
+Step: 80751 	 Loss: 4.1046 	 <Loss>: 4.0721 	 Lin. Disentanglement: 0.9972 	 Perm. Disentanglement: 0.9822
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 81001 	 Loss: 4.0827 	 <Loss>: 4.0732 	 Lin. Disentanglement: 0.9965 	 Perm. Disentanglement: 0.9807
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.1, 21.9, 5.9, 9.7] 	
+Step: 81251 	 Loss: 4.0756 	 <Loss>: 4.0748 	 Lin. Disentanglement: 0.9965 	 Perm. Disentanglement: 0.9802
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.7, 18.1, 21.9, 5.9, 9.7] 	
+Step: 81501 	 Loss: 4.1097 	 <Loss>: 4.0736 	 Lin. Disentanglement: 0.9971 	 Perm. Disentanglement: 0.9817
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.1, 22.0, 5.9, 9.7] 	
+Step: 81751 	 Loss: 4.1423 	 <Loss>: 4.0773 	 Lin. Disentanglement: 0.9964 	 Perm. Disentanglement: 0.9828
+learned lambda values: [15.7, 24.2, 19.8, 11.7, 13.7, 7.7, 18.1, 21.9, 5.9, 9.7] 	
+Step: 82001 	 Loss: 4.0678 	 <Loss>: 4.0707 	 Lin. Disentanglement: 0.9972 	 Perm. Disentanglement: 0.9836
+learned lambda values: [15.7, 24.2, 19.8, 11.7, 13.7, 7.7, 18.1, 22.0, 5.9, 9.7] 	
+Step: 82251 	 Loss: 4.0311 	 <Loss>: 4.0692 	 Lin. Disentanglement: 0.9966 	 Perm. Disentanglement: 0.9806
+learned lambda values: [15.8, 24.1, 19.8, 11.7, 13.7, 7.7, 18.1, 22.0, 5.9, 9.7] 	
+Step: 82501 	 Loss: 4.0930 	 <Loss>: 4.0806 	 Lin. Disentanglement: 0.9970 	 Perm. Disentanglement: 0.9809
+learned lambda values: [15.7, 24.1, 19.8, 11.6, 13.7, 7.7, 18.0, 21.9, 5.9, 9.7] 	
+Step: 82751 	 Loss: 4.0275 	 <Loss>: 4.0760 	 Lin. Disentanglement: 0.9963 	 Perm. Disentanglement: 0.9807
+learned lambda values: [15.7, 24.2, 19.8, 11.6, 13.7, 7.7, 18.0, 21.9, 5.9, 9.7] 	
+Step: 83001 	 Loss: 4.0985 	 <Loss>: 4.0754 	 Lin. Disentanglement: 0.9978 	 Perm. Disentanglement: 0.9826
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.7, 18.0, 21.9, 5.9, 9.7] 	
+Step: 83251 	 Loss: 4.0114 	 <Loss>: 4.0788 	 Lin. Disentanglement: 0.9968 	 Perm. Disentanglement: 0.9816
+learned lambda values: [15.7, 24.2, 19.8, 11.7, 13.7, 7.7, 18.0, 21.9, 5.9, 9.7] 	
+Step: 83501 	 Loss: 4.0469 	 <Loss>: 4.0747 	 Lin. Disentanglement: 0.9977 	 Perm. Disentanglement: 0.9826
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.7, 18.0, 21.9, 5.9, 9.7] 	
+Step: 83751 	 Loss: 4.1438 	 <Loss>: 4.0805 	 Lin. Disentanglement: 0.9977 	 Perm. Disentanglement: 0.9833
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.7, 18.0, 21.9, 5.9, 9.7] 	
+Step: 84001 	 Loss: 4.0001 	 <Loss>: 4.0682 	 Lin. Disentanglement: 0.9970 	 Perm. Disentanglement: 0.9822
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.7, 18.0, 21.9, 5.9, 9.7] 	
+Step: 84251 	 Loss: 4.0455 	 <Loss>: 4.0808 	 Lin. Disentanglement: 0.9971 	 Perm. Disentanglement: 0.9839
+learned lambda values: [15.7, 24.2, 19.8, 11.7, 13.7, 7.8, 18.0, 21.9, 5.9, 9.7] 	
+Step: 84501 	 Loss: 4.0910 	 <Loss>: 4.0662 	 Lin. Disentanglement: 0.9967 	 Perm. Disentanglement: 0.9834
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.8, 18.0, 21.9, 5.9, 9.7] 	
+Step: 84751 	 Loss: 3.9870 	 <Loss>: 4.0716 	 Lin. Disentanglement: 0.9971 	 Perm. Disentanglement: 0.9830
+learned lambda values: [15.7, 24.2, 19.8, 11.7, 13.7, 7.8, 18.0, 22.0, 5.9, 9.7] 	
+Step: 85001 	 Loss: 4.0271 	 <Loss>: 4.0768 	 Lin. Disentanglement: 0.9975 	 Perm. Disentanglement: 0.9842
+learned lambda values: [15.7, 24.2, 19.8, 11.7, 13.7, 7.8, 18.0, 22.0, 5.9, 9.7] 	
+Step: 85251 	 Loss: 4.1069 	 <Loss>: 4.0711 	 Lin. Disentanglement: 0.9972 	 Perm. Disentanglement: 0.9845
+learned lambda values: [15.8, 24.1, 19.8, 11.7, 13.7, 7.7, 18.0, 22.0, 5.9, 9.7] 	
+Step: 85501 	 Loss: 4.0362 	 <Loss>: 4.0759 	 Lin. Disentanglement: 0.9970 	 Perm. Disentanglement: 0.9822
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.7, 18.0, 22.0, 5.9, 9.7] 	
+Step: 85751 	 Loss: 4.1193 	 <Loss>: 4.0725 	 Lin. Disentanglement: 0.9973 	 Perm. Disentanglement: 0.9835
+learned lambda values: [15.7, 24.2, 19.8, 11.7, 13.7, 7.7, 18.0, 22.0, 5.9, 9.7] 	
+Step: 86001 	 Loss: 4.0682 	 <Loss>: 4.0716 	 Lin. Disentanglement: 0.9972 	 Perm. Disentanglement: 0.9833
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.7, 18.0, 22.0, 5.9, 9.7] 	
+Step: 86251 	 Loss: 4.1339 	 <Loss>: 4.0697 	 Lin. Disentanglement: 0.9969 	 Perm. Disentanglement: 0.9833
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.7, 18.0, 22.0, 5.9, 9.7] 	
+Step: 86501 	 Loss: 4.0198 	 <Loss>: 4.0759 	 Lin. Disentanglement: 0.9959 	 Perm. Disentanglement: 0.9841
+learned lambda values: [15.7, 24.1, 19.8, 11.7, 13.7, 7.7, 18.0, 22.0, 5.9, 9.7] 	
+Step: 86751 	 Loss: 4.0754 	 <Loss>: 4.0731 	 Lin. Disentanglement: 0.9969 	 Perm. Disentanglement: 0.9840
+learned lambda values: [15.7, 24.2, 19.8, 11.7, 13.7, 7.8, 18.0, 22.0, 5.9, 9.7] 	
+Step: 87001 	 Loss: 4.1272 	 <Loss>: 4.0763 	 Lin. Disentanglement: 0.9963 	 Perm. Disentanglement: 0.9828
+learned lambda values: [15.7, 24.2, 19.8, 11.7, 13.7, 7.7, 18.0, 22.0, 5.9, 9.7] 	
+Step: 87251 	 Loss: 4.1172 	 <Loss>: 4.0748 	 Lin. Disentanglement: 0.9970 	 Perm. Disentanglement: 0.9843
+learned lambda values: [15.8, 24.2, 19.8, 11.7, 13.7, 7.7, 18.0, 22.0, 5.9, 9.7] 	
+Step: 87501 	 Loss: 4.0813 	 <Loss>: 4.0699 	 Lin. Disentanglement: 0.9976 	 Perm. Disentanglement: 0.9849
+learned lambda values: [15.8, 24.2, 19.8, 11.7, 13.7, 7.7, 18.0, 22.0, 5.9, 9.7] 	
+Step: 87751 	 Loss: 4.0849 	 <Loss>: 4.0719 	 Lin. Disentanglement: 0.9976 	 Perm. Disentanglement: 0.9854
+learned lambda values: [15.8, 24.2, 19.8, 11.7, 13.7, 7.7, 18.0, 22.0, 5.9, 9.7] 	
+Step: 88001 	 Loss: 4.1437 	 <Loss>: 4.0732 	 Lin. Disentanglement: 0.9967 	 Perm. Disentanglement: 0.9845
+learned lambda values: [15.8, 24.2, 19.8, 11.7, 13.7, 7.7, 18.0, 22.0, 5.9, 9.7] 	
+Step: 88251 	 Loss: 4.0574 	 <Loss>: 4.0737 	 Lin. Disentanglement: 0.9966 	 Perm. Disentanglement: 0.9831
+learned lambda values: [15.8, 24.2, 19.8, 11.7, 13.7, 7.8, 18.0, 22.0, 5.9, 9.7] 	
+Step: 88501 	 Loss: 4.1292 	 <Loss>: 4.0679 	 Lin. Disentanglement: 0.9968 	 Perm. Disentanglement: 0.9846
+learned lambda values: [15.8, 24.2, 19.8, 11.7, 13.7, 7.8, 18.0, 22.0, 5.9, 9.7] 	
+Step: 88751 	 Loss: 4.0259 	 <Loss>: 4.0703 	 Lin. Disentanglement: 0.9968 	 Perm. Disentanglement: 0.9837
+learned lambda values: [15.8, 24.2, 19.8, 11.7, 13.7, 7.8, 18.0, 22.0, 5.9, 9.7] 	
+Step: 89001 	 Loss: 4.0328 	 <Loss>: 4.0698 	 Lin. Disentanglement: 0.9968 	 Perm. Disentanglement: 0.9838
+learned lambda values: [15.8, 24.2, 19.8, 11.7, 13.7, 7.7, 18.0, 22.0, 5.9, 9.7] 	
+Step: 89251 	 Loss: 4.0342 	 <Loss>: 4.0706 	 Lin. Disentanglement: 0.9961 	 Perm. Disentanglement: 0.9838
+learned lambda values: [15.8, 24.2, 19.8, 11.7, 13.7, 7.7, 18.0, 22.0, 5.9, 9.7] 	
+Step: 89501 	 Loss: 4.1006 	 <Loss>: 4.0736 	 Lin. Disentanglement: 0.9966 	 Perm. Disentanglement: 0.9853
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.7, 7.7, 18.0, 22.0, 5.9, 9.7] 	
+Step: 89751 	 Loss: 4.0100 	 <Loss>: 4.0720 	 Lin. Disentanglement: 0.9963 	 Perm. Disentanglement: 0.9847
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.7, 7.7, 18.0, 22.0, 5.9, 9.7] 	
+Step: 90001 	 Loss: 4.1077 	 <Loss>: 4.0719 	 Lin. Disentanglement: 0.9974 	 Perm. Disentanglement: 0.9853
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.7, 7.7, 18.0, 22.0, 5.9, 9.7] 	
+Step: 90251 	 Loss: 4.0359 	 <Loss>: 4.0727 	 Lin. Disentanglement: 0.9971 	 Perm. Disentanglement: 0.9863
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.7, 7.7, 18.0, 22.0, 5.9, 9.7] 	
+Step: 90501 	 Loss: 3.9722 	 <Loss>: 4.0785 	 Lin. Disentanglement: 0.9969 	 Perm. Disentanglement: 0.9855
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.7, 7.7, 18.0, 22.0, 5.9, 9.7] 	
+Step: 90751 	 Loss: 4.0555 	 <Loss>: 4.0775 	 Lin. Disentanglement: 0.9975 	 Perm. Disentanglement: 0.9853
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.7, 7.7, 18.0, 22.0, 5.9, 9.7] 	
+Step: 91001 	 Loss: 4.1272 	 <Loss>: 4.0690 	 Lin. Disentanglement: 0.9960 	 Perm. Disentanglement: 0.9841
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.7, 7.7, 18.0, 22.0, 5.9, 9.7] 	
+Step: 91251 	 Loss: 4.1683 	 <Loss>: 4.0744 	 Lin. Disentanglement: 0.9971 	 Perm. Disentanglement: 0.9861
+learned lambda values: [15.8, 24.1, 19.9, 11.7, 13.7, 7.7, 18.0, 22.0, 5.9, 9.7] 	
+Step: 91501 	 Loss: 4.0772 	 <Loss>: 4.0716 	 Lin. Disentanglement: 0.9972 	 Perm. Disentanglement: 0.9851
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.7, 7.7, 18.0, 22.0, 5.9, 9.7] 	
+Step: 91751 	 Loss: 4.0627 	 <Loss>: 4.0686 	 Lin. Disentanglement: 0.9971 	 Perm. Disentanglement: 0.9850
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.7, 7.8, 18.0, 22.0, 5.9, 9.7] 	
+Step: 92001 	 Loss: 4.0530 	 <Loss>: 4.0739 	 Lin. Disentanglement: 0.9970 	 Perm. Disentanglement: 0.9850
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.7, 7.7, 18.0, 22.0, 5.9, 9.7] 	
+Step: 92251 	 Loss: 4.1266 	 <Loss>: 4.0752 	 Lin. Disentanglement: 0.9965 	 Perm. Disentanglement: 0.9853
+learned lambda values: [15.8, 24.1, 19.8, 11.7, 13.7, 7.7, 18.0, 22.0, 5.9, 9.7] 	
+Step: 92501 	 Loss: 4.0661 	 <Loss>: 4.0759 	 Lin. Disentanglement: 0.9964 	 Perm. Disentanglement: 0.9857
+learned lambda values: [15.8, 24.1, 19.8, 11.7, 13.7, 7.8, 18.0, 22.0, 5.9, 9.7] 	
+Step: 92751 	 Loss: 4.1107 	 <Loss>: 4.0722 	 Lin. Disentanglement: 0.9967 	 Perm. Disentanglement: 0.9861
+learned lambda values: [15.8, 24.1, 19.9, 11.7, 13.7, 7.8, 18.0, 22.0, 5.9, 9.7] 	
+Step: 93001 	 Loss: 4.0169 	 <Loss>: 4.0736 	 Lin. Disentanglement: 0.9977 	 Perm. Disentanglement: 0.9871
+learned lambda values: [15.8, 24.2, 19.8, 11.7, 13.7, 7.8, 18.0, 22.0, 5.9, 9.7] 	
+Step: 93251 	 Loss: 4.0900 	 <Loss>: 4.0790 	 Lin. Disentanglement: 0.9969 	 Perm. Disentanglement: 0.9852
+learned lambda values: [15.8, 24.1, 19.8, 11.7, 13.7, 7.8, 18.0, 22.0, 5.9, 9.7] 	
+Step: 93501 	 Loss: 4.0325 	 <Loss>: 4.0750 	 Lin. Disentanglement: 0.9972 	 Perm. Disentanglement: 0.9866
+learned lambda values: [15.8, 24.2, 19.8, 11.7, 13.7, 7.7, 18.0, 22.0, 5.9, 9.7] 	
+Step: 93751 	 Loss: 4.0750 	 <Loss>: 4.0718 	 Lin. Disentanglement: 0.9970 	 Perm. Disentanglement: 0.9857
+learned lambda values: [15.8, 24.2, 19.8, 11.7, 13.7, 7.7, 18.0, 22.0, 5.9, 9.7] 	
+Step: 94001 	 Loss: 4.0632 	 <Loss>: 4.0698 	 Lin. Disentanglement: 0.9977 	 Perm. Disentanglement: 0.9871
+learned lambda values: [15.8, 24.2, 19.8, 11.7, 13.7, 7.7, 18.0, 22.0, 5.9, 9.7] 	
+Step: 94251 	 Loss: 4.1012 	 <Loss>: 4.0724 	 Lin. Disentanglement: 0.9974 	 Perm. Disentanglement: 0.9879
+learned lambda values: [15.8, 24.2, 19.8, 11.7, 13.7, 7.7, 18.0, 22.0, 5.9, 9.7] 	
+Step: 94501 	 Loss: 4.1247 	 <Loss>: 4.0746 	 Lin. Disentanglement: 0.9962 	 Perm. Disentanglement: 0.9866
+learned lambda values: [15.8, 24.2, 19.8, 11.7, 13.7, 7.7, 18.0, 22.0, 5.9, 9.7] 	
+Step: 94751 	 Loss: 3.9921 	 <Loss>: 4.0720 	 Lin. Disentanglement: 0.9973 	 Perm. Disentanglement: 0.9862
+learned lambda values: [15.8, 24.2, 19.8, 11.7, 13.7, 7.7, 18.0, 22.0, 5.9, 9.7] 	
+Step: 95001 	 Loss: 4.0461 	 <Loss>: 4.0685 	 Lin. Disentanglement: 0.9967 	 Perm. Disentanglement: 0.9857
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.7, 7.8, 18.0, 22.0, 5.9, 9.7] 	
+Step: 95251 	 Loss: 4.0312 	 <Loss>: 4.0720 	 Lin. Disentanglement: 0.9968 	 Perm. Disentanglement: 0.9862
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.7, 7.8, 18.0, 22.0, 5.9, 9.7] 	
+Step: 95501 	 Loss: 4.0579 	 <Loss>: 4.0759 	 Lin. Disentanglement: 0.9970 	 Perm. Disentanglement: 0.9863
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.7, 7.7, 18.0, 22.0, 5.9, 9.7] 	
+Step: 95751 	 Loss: 4.0504 	 <Loss>: 4.0746 	 Lin. Disentanglement: 0.9972 	 Perm. Disentanglement: 0.9866
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.7, 7.7, 18.0, 22.0, 5.9, 9.7] 	
+Step: 96001 	 Loss: 4.0057 	 <Loss>: 4.0656 	 Lin. Disentanglement: 0.9976 	 Perm. Disentanglement: 0.9880
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.7, 7.7, 18.0, 22.0, 5.9, 9.7] 	
+Step: 96251 	 Loss: 4.0763 	 <Loss>: 4.0674 	 Lin. Disentanglement: 0.9970 	 Perm. Disentanglement: 0.9865
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.7, 7.8, 18.0, 22.0, 5.9, 9.7] 	
+Step: 96501 	 Loss: 4.0624 	 <Loss>: 4.0738 	 Lin. Disentanglement: 0.9945 	 Perm. Disentanglement: 0.9850
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.7, 7.8, 18.0, 22.0, 5.9, 9.7] 	
+Step: 96751 	 Loss: 4.0001 	 <Loss>: 4.0745 	 Lin. Disentanglement: 0.9972 	 Perm. Disentanglement: 0.9874
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.7, 7.8, 18.0, 22.0, 5.9, 9.7] 	
+Step: 97001 	 Loss: 4.1371 	 <Loss>: 4.0784 	 Lin. Disentanglement: 0.9979 	 Perm. Disentanglement: 0.9882
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.7, 7.8, 18.0, 22.0, 5.9, 9.7] 	
+Step: 97251 	 Loss: 4.0478 	 <Loss>: 4.0740 	 Lin. Disentanglement: 0.9969 	 Perm. Disentanglement: 0.9883
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.7, 7.8, 18.0, 22.0, 5.9, 9.7] 	
+Step: 97501 	 Loss: 4.1353 	 <Loss>: 4.0720 	 Lin. Disentanglement: 0.9947 	 Perm. Disentanglement: 0.9847
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.7, 7.8, 18.0, 22.0, 5.9, 9.7] 	
+Step: 97751 	 Loss: 4.0608 	 <Loss>: 4.0664 	 Lin. Disentanglement: 0.9971 	 Perm. Disentanglement: 0.9885
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.7, 7.8, 18.0, 22.0, 5.9, 9.7] 	
+Step: 98001 	 Loss: 4.0398 	 <Loss>: 4.0718 	 Lin. Disentanglement: 0.9969 	 Perm. Disentanglement: 0.9880
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.7, 7.7, 18.0, 22.0, 5.9, 9.7] 	
+Step: 98251 	 Loss: 4.0747 	 <Loss>: 4.0682 	 Lin. Disentanglement: 0.9973 	 Perm. Disentanglement: 0.9884
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.7, 7.8, 18.0, 22.0, 5.9, 9.7] 	
+Step: 98501 	 Loss: 3.9925 	 <Loss>: 4.0703 	 Lin. Disentanglement: 0.9971 	 Perm. Disentanglement: 0.9882
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.7, 7.7, 18.0, 22.0, 5.9, 9.7] 	
+Step: 98751 	 Loss: 4.1816 	 <Loss>: 4.0753 	 Lin. Disentanglement: 0.9975 	 Perm. Disentanglement: 0.9888
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.7, 7.8, 18.0, 22.0, 5.9, 9.7] 	
+Step: 99001 	 Loss: 4.0496 	 <Loss>: 4.0709 	 Lin. Disentanglement: 0.9971 	 Perm. Disentanglement: 0.9886
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.7, 7.8, 18.0, 22.0, 5.9, 9.7] 	
+Step: 99251 	 Loss: 4.1258 	 <Loss>: 4.0774 	 Lin. Disentanglement: 0.9963 	 Perm. Disentanglement: 0.9889
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.7, 7.7, 18.0, 22.0, 5.9, 9.7] 	
+Step: 99501 	 Loss: 4.0688 	 <Loss>: 4.0648 	 Lin. Disentanglement: 0.9965 	 Perm. Disentanglement: 0.9877
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.7, 7.8, 18.0, 22.0, 5.9, 9.7] 	
+Step: 99751 	 Loss: 4.0917 	 <Loss>: 4.0680 	 Lin. Disentanglement: 0.9966 	 Perm. Disentanglement: 0.9893
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.7, 7.8, 18.0, 22.0, 5.9, 9.7] 	
+Step: 100001 	 Loss: 4.1331 	 <Loss>: 4.0708 	 Lin. Disentanglement: 0.9956 	 Perm. Disentanglement: 0.9882
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.7, 7.8, 18.0, 22.0, 5.9, 9.7] 	
+Step: 100251 	 Loss: 4.1431 	 <Loss>: 4.0708 	 Lin. Disentanglement: 0.9973 	 Perm. Disentanglement: 0.9890
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.7, 7.8, 18.0, 22.0, 5.9, 9.7] 	
+Step: 100501 	 Loss: 4.0005 	 <Loss>: 4.0634 	 Lin. Disentanglement: 0.9972 	 Perm. Disentanglement: 0.9895
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.7, 7.8, 18.0, 22.0, 5.9, 9.7] 	
+Step: 100751 	 Loss: 4.0530 	 <Loss>: 4.0659 	 Lin. Disentanglement: 0.9963 	 Perm. Disentanglement: 0.9879
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.7, 7.8, 18.0, 22.0, 5.9, 9.7] 	
+Step: 101001 	 Loss: 4.1381 	 <Loss>: 4.0642 	 Lin. Disentanglement: 0.9975 	 Perm. Disentanglement: 0.9897
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.7, 7.8, 18.0, 22.0, 5.9, 9.7] 	
+Step: 101251 	 Loss: 3.9235 	 <Loss>: 4.0609 	 Lin. Disentanglement: 0.9978 	 Perm. Disentanglement: 0.9894
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.7, 7.8, 18.0, 22.0, 5.9, 9.7] 	
+Step: 101501 	 Loss: 4.0554 	 <Loss>: 4.0654 	 Lin. Disentanglement: 0.9969 	 Perm. Disentanglement: 0.9884
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.8, 7.8, 18.0, 22.0, 5.9, 9.7] 	
+Step: 101751 	 Loss: 4.0107 	 <Loss>: 4.0664 	 Lin. Disentanglement: 0.9965 	 Perm. Disentanglement: 0.9891
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.7, 7.8, 18.0, 22.0, 5.9, 9.7] 	
+Step: 102001 	 Loss: 4.0756 	 <Loss>: 4.0770 	 Lin. Disentanglement: 0.9975 	 Perm. Disentanglement: 0.9895
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.7, 7.8, 18.0, 22.0, 5.9, 9.7] 	
+Step: 102251 	 Loss: 4.0790 	 <Loss>: 4.0668 	 Lin. Disentanglement: 0.9976 	 Perm. Disentanglement: 0.9899
+learned lambda values: [15.8, 24.2, 19.9, 11.7, 13.7, 7.8, 18.0, 22.0, 5.9, 9.7] 	
