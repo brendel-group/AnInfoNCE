@@ -136,10 +136,18 @@
                     <table>
                         <tr>
                             <td>
+                                <span class="badge badge-pill badge-primary">Jan '25</span>
+                            </td>
+                            <td>
+                                The paper was accepted for <a href="https://openreview.net/forum?id=RNQzrXWhIs&referrer=%5BAuthor%20Console%5D(%2Fgroup%3Fid%3Daistats.org%2FAISTATS%2F2025%2FConference%2FAuthors%23your-submissions)" target="_blank">AISTATS 2025</a>.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
                                 <span class="badge badge-pill badge-primary">Feb '24</span>
                             </td>
                             <td>
-                                The pre-print is now <a href="" target="_blank">available</a>.
+                                The pre-print is now <a href="https://arxiv.org/abs/2407.00143" target="_blank">available</a>.
                             </td>
                         </tr>
                     </table>
@@ -309,7 +317,11 @@
                     <p>If you find our study or our dataset helpful, please cite our paper:</p>
                 </div>
                 <div class="row justify-content-md-center">
-                    <div class="col-sm-8 rounded p-3 m-2" style="background-color:lightgray;">
+                    <div class="col-sm-8 rounded p-3 m-2 position-relative" style="background-color:lightgray;">
+                        <button class="btn btn-sm btn-light position-absolute" style="top: 5px; right: 5px;" 
+                                id="copy-bibtex-btn" title="Copy to clipboard">
+                            <i class="far fa-copy"></i>
+                        </button>
                         <small class="code">
                             @article{rusak2024contrastive,<br>
                             &nbsp;&nbsp;author = { <br>
@@ -354,12 +366,66 @@
 
     <script>
         $(function () {
-            $('[data-toggle="tooltip"]').tooltip()
-        })
+            $('[data-toggle="tooltip"]').tooltip();
+            
+            // Add event listener for the copy button
+            document.getElementById('copy-bibtex-btn').addEventListener('click', copyBibTeX);
+        });
+        
+        function copyBibTeX() {
+            // Create a clean citation string without HTML formatting
+            const citation = `@article{rusak2024contrastive,
+  author = {
+    Rusak, Evgenia and
+    Reizinger, Patrick and
+    Juhos, Attila and
+    Bringmann, Oliver and
+    Zimmermann, Roland S. and
+    Brendel, Wieland and
+  },
+  title = {
+    InfoNCE: Identifying the Gap Between Theory and Practice
+  },
+  year = {2024},
+}`;
+            
+            // Create a temporary textarea element to copy from
+            const textarea = document.createElement('textarea');
+            textarea.value = citation;
+            textarea.style.position = 'fixed';  // Prevent scrolling to the element
+            textarea.style.opacity = '0';       // Make it invisible
+            document.body.appendChild(textarea);
+            textarea.select();
+            
+            try {
+                // Execute copy command
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    showSuccess();
+                }
+            } catch (err) {
+                console.error('Unable to copy', err);
+            } finally {
+                // Clean up
+                document.body.removeChild(textarea);
+            }
+        }
+        
+        function showSuccess() {
+            // Show feedback
+            const button = document.getElementById('copy-bibtex-btn');
+            const originalHTML = button.innerHTML;
+            button.innerHTML = '<i class="fas fa-check"></i>';
+            button.title = "Copied!";
+            
+            // Reset button after 2 seconds
+            setTimeout(() => {
+                button.innerHTML = originalHTML;
+                button.title = "Copy to clipboard";
+            }, 2000);
+        }
     </script>
 
 </body>
-
-</html>
 
 </html>
