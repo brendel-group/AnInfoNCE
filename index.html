@@ -7,25 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Primary Meta Tags -->
-    <title>Contrastive Learning: Reducing the Gap Between Theory and Practice</title>
-    <meta name="title" content="Contrastive Learning: Reducing the Gap Between Theory and Practice">
+    <title>InfoNCE: Identifying the Gap Between Theory and Practice</title>
+    <meta name="title" content="InfoNCE: Identifying the Gap Between Theory and Practice">
     <meta name="description"
-        content="Previous theoretical work on contrastive learning (CL) with InfoNCE showed that, under certain assumptions, the learned representations uncover the ground-truth latent factors. We argue that these theories overlook crucial aspects of how CL is deployed in practice. Specifically, they assume that within a positive pair, all latent factors either vary to a similar extent, or that some do not vary at all. However, in practice, positive pairs are often generated using augmentations such as strong cropping to just a few pixels. Hence, a more realistic assumption is that all latent factors change, but there exists a continuum of variability across these factors. We introduce AnInfoNCE, a generalization of InfoNCE that can provably uncover the latent factors in this anisotropic setting, thereby broadly generalizing previous identifiability results in CL. We validate our identifiability results in controlled experiments and show that AnInfoNCE increases the recovery of previously collapsed information in CIFAR and ImageNet. Additionally, we explore and discuss further mismatches between theoretical assumptions and practical implementations, including extensions to hard negative mining and loss ensembles.">
+        content="Prior theory work on Contrastive Learning via the InfoNCE loss showed that, under certain assumptions, the learned representations recover the ground-truth latent factors. We argue that these theories overlook crucial aspects of how CL is deployed in practice. Specifically, they either assume equal variance across all latents or that certain latents are kept invariant. However, in practice, positive pairs are often generated using augmentations such as strong cropping to just a few pixels. Hence, a more realistic assumption is that all latent factors change with a continuum of variability across all factors. We introduce AnInfoNCE, a generalization of InfoNCE that can provably uncover the latent factors in this anisotropic setting, broadly generalizing previous identifiability results in CL. We validate our identifiability results in controlled experiments and show that AnInfoNCE increases the recovery of previously collapsed information in CIFAR10 and ImageNet, albeit at the cost of downstream accuracy. 
+        Finally, we discuss the remaining mismatches between theoretical assumptions and practical implementations.">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://brendel-group.github.io/AnInfoNCE/">
-    <meta property="og:title" content="Contrastive Learning: Reducing the Gap Between Theory and Practice">
+    <meta property="og:title" content="InfoNCE: Identifying the Gap Between Theory and Practice">
     <meta property="og:description"
-        content="Previous theoretical work on contrastive learning (CL) with InfoNCE showed that, under certain assumptions, the learned representations uncover the ground-truth latent factors. We argue that these theories overlook crucial aspects of how CL is deployed in practice. Specifically, they assume that within a positive pair, all latent factors either vary to a similar extent, or that some do not vary at all. However, in practice, positive pairs are often generated using augmentations such as strong cropping to just a few pixels. Hence, a more realistic assumption is that all latent factors change, but there exists a continuum of variability across these factors. We introduce AnInfoNCE, a generalization of InfoNCE that can provably uncover the latent factors in this anisotropic setting, thereby broadly generalizing previous identifiability results in CL. We validate our identifiability results in controlled experiments and show that AnInfoNCE increases the recovery of previously collapsed information in CIFAR and ImageNet. Additionally, we explore and discuss further mismatches between theoretical assumptions and practical implementations, including extensions to hard negative mining and loss ensembles.">
+        content="Prior theory work on Contrastive Learning via the InfoNCE loss showed that, under certain assumptions, the learned representations recover the ground-truth latent factors. We argue that these theories overlook crucial aspects of how CL is deployed in practice. Specifically, they either assume equal variance across all latents or that certain latents are kept invariant. However, in practice, positive pairs are often generated using augmentations such as strong cropping to just a few pixels. Hence, a more realistic assumption is that all latent factors change with a continuum of variability across all factors. We introduce AnInfoNCE, a generalization of InfoNCE that can provably uncover the latent factors in this anisotropic setting, broadly generalizing previous identifiability results in CL. We validate our identifiability results in controlled experiments and show that AnInfoNCE increases the recovery of previously collapsed information in CIFAR10 and ImageNet, albeit at the cost of downstream accuracy. 
+        Finally, we discuss the remaining mismatches between theoretical assumptions and practical implementations.">
     <meta property="og:image" content="https://brendel-group.github.io/AnInfoNCE/img/intro.svg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://brendel-group.github.io/mis">
-    <meta property="twitter:title" content="Contrastive Learning: Reducing the Gap Between Theory and Practice">
+    <meta property="twitter:title" content="InfoNCE: Identifying the Gap Between Theory and Practice">
     <meta property="twitter:description"
-        content="Previous theoretical work on contrastive learning (CL) with InfoNCE showed that, under certain assumptions, the learned representations uncover the ground-truth latent factors. We argue that these theories overlook crucial aspects of how CL is deployed in practice. Specifically, they assume that within a positive pair, all latent factors either vary to a similar extent, or that some do not vary at all. However, in practice, positive pairs are often generated using augmentations such as strong cropping to just a few pixels. Hence, a more realistic assumption is that all latent factors change, but there exists a continuum of variability across these factors. We introduce AnInfoNCE, a generalization of InfoNCE that can provably uncover the latent factors in this anisotropic setting, thereby broadly generalizing previous identifiability results in CL. We validate our identifiability results in controlled experiments and show that AnInfoNCE increases the recovery of previously collapsed information in CIFAR and ImageNet. Additionally, we explore and discuss further mismatches between theoretical assumptions and practical implementations, including extensions to hard negative mining and loss ensembles.">
+        content="Prior theory work on Contrastive Learning via the InfoNCE loss showed that, under certain assumptions, the learned representations recover the ground-truth latent factors. We argue that these theories overlook crucial aspects of how CL is deployed in practice. Specifically, they either assume equal variance across all latents or that certain latents are kept invariant. However, in practice, positive pairs are often generated using augmentations such as strong cropping to just a few pixels. Hence, a more realistic assumption is that all latent factors change with a continuum of variability across all factors. We introduce AnInfoNCE, a generalization of InfoNCE that can provably uncover the latent factors in this anisotropic setting, broadly generalizing previous identifiability results in CL. We validate our identifiability results in controlled experiments and show that AnInfoNCE increases the recovery of previously collapsed information in CIFAR10 and ImageNet, albeit at the cost of downstream accuracy. 
+        Finally, we discuss the remaining mismatches between theoretical assumptions and practical implementations.">
     <meta property="twitter:image" content="https://brendel-group.github.io/AnInfoNCE/img/intro.svg">
 
     <!-- Bootstrap CSS -->
@@ -43,7 +46,7 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <title>Contrastive Learning: Reducing the Gap Between Theory and Practice</title>
+    <title>InfoNCE: Identifying the Gap Between Theory and Practice</title>
 </head>
 
 <body>
@@ -53,7 +56,7 @@
             </div>
             <div class="col-sm-8" id="main-content">
                 <div class="row text-center my-5" id="#">
-                    <h1>Contrastive Learning: Reducing the Gap Between Theory and Practice</h1>
+                    <h1>InfoNCE: Identifying the Gap Between Theory and Practice</h1>
                 </div>
 
                 <!-- Begin author list-->
@@ -61,17 +64,20 @@
                     
                     <div class="col-sm-4 mb-4">
                         Evgenia Rusak*
-                        <a href="mailto:evgenia.rusak@uni-tuebingen.de"><i class="far fa-envelope"></i></a></br>
+                        <a href="mailto:evgenia.rusak@uni-tuebingen.de"><i class="far fa-envelope"></i></a>
+                        <a href="https://evgeniarusak.github.io/" target="_blank"><i class="fas fa-link"></i></a></br>
                         University of Tübingen <br>
                         MPI-IS
                     </div>
                     <div class="col-sm-4 mb-4">
-                        Patrik Reizinger* <br>
+                        Patrik Reizinger*
+                        <a href="https://rpatrik96.github.io/" target="_blank"><i class="fas fa-link"></i></a></br>
                         MPI-IS
                     </div>
                     <div class="col-sm-4 mb-4">
                         Attila Juhos*
-                        <a href="mailto:tklein@uni-tuebingen.de"><i class="far"></i></a><br>
+                        <a href="mailto:attila.juhos@tuebingen.mpg.de"><i class="far fa-envelope"></i></a>
+                        <a href="https://juhosattila.github.io/" target="_blank"><i class="fas fa-link"></i></a></br>
                         MPI-IS
                     </div>
                     <div class="col-sm-4 mb-4">
@@ -95,17 +101,17 @@
                 <div class="row text-center">
                     <div class="col-sm-6 mb-6">
                         <h4>
-                            <a href="" target="_blank">
+                            <a href="https://arxiv.org/abs/2407.00143" target="_blank">
                                 <i class="fas fa-file-alt"></i>
-                                Paper [Soon]
+                                Paper
                             </a>
                         </h4>
                     </div>
                     <div class="col-sm-6 mb-6">
                         <h4>
-                            <a href="https://github.com/brendel-group/AnInfoNCE" target="_blank" style="pointer-events: none;">
+                            <a href="https://github.com/brendel-group/AnInfoNCE" target="_blank">
                                 <i class="fab fa-github"></i>
-                                Code [Soon]
+                                Code
                             </a>
                         </h4>
                     </div>
@@ -145,7 +151,8 @@
                 <div class="row mt-2">
                     <div class="col-12 collapse-container">
                         <p class="collapse" id="abstractText" aria-expanded="false">
-                            Previous theoretical work on contrastive learning (CL) with InfoNCE showed that, under certain assumptions, the learned representations uncover the ground-truth latent factors. We argue that these theories overlook crucial aspects of how CL is deployed in practice. Specifically, they assume that within a positive pair, all latent factors either vary to a similar extent, or that some do not vary at all. However, in practice, positive pairs are often generated using augmentations such as strong cropping to just a few pixels. Hence, a more realistic assumption is that all latent factors change, but there exists a continuum of variability across these factors. We introduce AnInfoNCE, a generalization of InfoNCE that can provably uncover the latent factors in this anisotropic setting, thereby broadly generalizing previous identifiability results in CL. We validate our identifiability results in controlled experiments and show that AnInfoNCE increases the recovery of previously collapsed information in CIFAR and ImageNet. Additionally, we explore and discuss further mismatches between theoretical assumptions and practical implementations, including extensions to hard negative mining and loss ensembles.
+                            Prior theory work on Contrastive Learning via the InfoNCE loss showed that, under certain assumptions, the learned representations recover the ground-truth latent factors. We argue that these theories overlook crucial aspects of how CL is deployed in practice. Specifically, they either assume equal variance across all latents or that certain latents are kept invariant. However, in practice, positive pairs are often generated using augmentations such as strong cropping to just a few pixels. Hence, a more realistic assumption is that all latent factors change with a continuum of variability across all factors. We introduce AnInfoNCE, a generalization of InfoNCE that can provably uncover the latent factors in this anisotropic setting, broadly generalizing previous identifiability results in CL. We validate our identifiability results in controlled experiments and show that AnInfoNCE increases the recovery of previously collapsed information in CIFAR10 and ImageNet, albeit at the cost of downstream accuracy. 
+                            Finally, we discuss the remaining mismatches between theoretical assumptions and practical implementations.
                         </p>
                        <a role="button" id="moreless" class="collapsed" data-toggle="collapse" href="#abstractText" aria-expanded="false" aria-controls="abstractText"></a>
                     </div>
@@ -314,7 +321,7 @@
                             &nbsp;&nbsp;&nbsp;&nbsp;Brendel, Wieland and<br>
                             &nbsp;&nbsp;},<br>
                             &nbsp;&nbsp;title = {<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;Contrastive Learning: Reducing the<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;InfoNCE: Identifying the<br>
                             &nbsp;&nbsp;&nbsp;&nbsp;Gap Between Theory and Practice<br>
                             &nbsp;&nbsp;},<br>
                             &nbsp;&nbsp;year = {2024},<br>
